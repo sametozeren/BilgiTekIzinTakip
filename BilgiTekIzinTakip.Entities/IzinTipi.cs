@@ -13,11 +13,13 @@ namespace BilgiTekIzinTakip.Entities
     public class IzinTipi:MyEntityBase
     {
 
-        [DisplayName("İzin Türü"), StringLength(50, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır.")]
+        [DisplayName("İzin Türü"), StringLength(50, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır."), Required(ErrorMessage = "{0} alanı gereklidir.")]
 
         public String IzinTuru { get; set; }
-         
-       
+
+        public virtual Izinler IzinlerId  { get; set; }
+
+
 
     }
 }

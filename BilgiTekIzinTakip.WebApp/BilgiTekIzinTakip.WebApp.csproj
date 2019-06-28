@@ -121,9 +121,21 @@
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BilgiTekIzinTakip.BusinessLayer\BilgiTekIzinTakip.BusinessLayer.csproj">
+      <Project>{41B48316-5EAB-4B93-A6F2-8EB887AEF6B5}</Project>
+      <Name>BilgiTekIzinTakip.BusinessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BilgiTekIzinTakip.Common\BilgiTekIzinTakip.Common.csproj">
       <Project>{0DBB9A97-AAC0-4CA2-BBB8-71B1584A0332}</Project>
       <Name>BilgiTekIzinTakip.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BilgiTekIzinTakip.Core\BilgiTekIzinTakip.Core.csproj">
+      <Project>{98cf63c7-8b64-434d-be53-01a0fb6b8191}</Project>
+      <Name>BilgiTekIzinTakip.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BilgiTekIzinTakip.Entities\BilgiTekIzinTakip.Entities.csproj">
+      <Project>{9B199EB0-6AD6-4A78-A31B-9AC02C9898DE}</Project>
+      <Name>BilgiTekIzinTakip.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

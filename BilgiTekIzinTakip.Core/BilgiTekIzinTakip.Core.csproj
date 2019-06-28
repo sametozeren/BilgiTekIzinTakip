@@ -58,5 +58,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BilgiTekIzinTakip.Entities\BilgiTekIzinTakip.Entities.csproj">
+      <Project>{9B199EB0-6AD6-4A78-A31B-9AC02C9898DE}</Project>
+      <Name>BilgiTekIzinTakip.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

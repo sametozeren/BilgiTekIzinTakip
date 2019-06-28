@@ -12,11 +12,11 @@ namespace BilgiTekIzinTakip.Entities
     public class Seflik
     {
 
-        [DisplayName("İsim"), StringLength(25, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır.")]
+        [DisplayName("İsim"), Required(ErrorMessage = "{0} alanı gereklidir."), StringLength(25, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır.")]
         public String Isim { get; set; }
-
+       
         public virtual Baskanlik BaskanlikID { get; set; }
-
+  
         public virtual Mudurluk MudurlukID { get; set; }
 
 

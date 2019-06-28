@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BilgiTekIzinTakip.BusinessLayer;
+using BilgiTekIzinTakip.Core.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +13,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         // GET: Account
         public ActionResult Login()
         {
+            Test test = new Test();
             return View();
         }
     }
