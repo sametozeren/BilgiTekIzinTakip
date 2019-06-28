@@ -1,0 +1,2 @@
+# BilgiTekIzinTakip
+BilgiTekIzinTakip-mvc
