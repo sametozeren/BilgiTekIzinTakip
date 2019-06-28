@@ -8,12 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BilgiTekIzinTakip.Entities
-{
-
-    [Table("Baskanlik")]
-    public class Baskanlik :MyEntityBase
+{  
+    [Table("IzinTipi")]
+    public class IzinTipi:MyEntityBase
     {
-        [Required,DisplayName("İsim"), StringLength(50, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır.")]
-        public String Isim { get; set; }
+
+        [DisplayName("İzin Türü"), StringLength(50, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır.")]
+
+        public String IzinTuru { get; set; }
+         
+       
+
     }
 }
