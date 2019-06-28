@@ -13,34 +13,23 @@ namespace BilgiTekIzinTakip.Entities
    public class Personel:MyEntityBase
     {
         [DisplayName("Sicil Numarası"),Required(ErrorMessage = "{0} alanı gereklidir.")]
-
         public int SicilNo { get; set; }
-
-
         [DisplayName("Ad"), StringLength(25, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır."),Required(ErrorMessage = "{0} alanı gereklidir.") ]
-        public String Ad { get; set; }
-
+        public string Ad { get; set; }
         [DisplayName("Soyad"), StringLength(25, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır."), Required(ErrorMessage = "{0} alanı gereklidir.")]
-        public String Soyad { get; set; }
+        public string Soyad { get; set; }
         [DisplayName("E-mail")]
-        public String Email { get; set; }
+        public string Email { get; set; }
         [DisplayName("Dahili Numarası")]
-        public String DahiliNumarası { get; set; }
-
-
+        public string DahiliNumarasi { get; set; }
         [DisplayName("Kullanıcı Adı"), StringLength(25, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır."), Required(ErrorMessage = "{0} alanı gereklidir.")]
-        public String KullaniciAdı { get; set; }
+        public string KullaniciAdi { get; set; }
         [DisplayName("Şifre"), StringLength(25, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır."), Required(ErrorMessage = "{0} alanı gereklidir.")]
-        public String Sifre { get; set; }
-        
-
-
-
-        public virtual Baskanlik BaskanlikID { get; set; }
-        public virtual Mudurluk MudurlukID { get; set; }
-        public virtual Seflik SeflikID { get; set; }
-        
-        public virtual List<Izinler> IzinlerId { get; set; }
+        public string Sifre { get; set; }
+        public virtual Baskanlik Baskanlik { get; set; }
+        public virtual Mudurluk Mudurluk { get; set; }
+        public virtual Seflik Seflik { get; set; }
+        public virtual List<Izinler> Izinler { get; set; }
 
     }
 }

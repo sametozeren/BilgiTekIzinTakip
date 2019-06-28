@@ -11,11 +11,10 @@ namespace BilgiTekIzinTakip.Entities
 {
 
     [Table("Mudurluk")]
-    public class Mudurluk
+    public class Mudurluk:MyEntityBase
     {
         [DisplayName("İsim"), StringLength(50, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır."), Required(ErrorMessage = "{0} alanı gereklidir.")]
-        public String Isim { get; set; }
-
-        public virtual Baskanlik BaskanlikID { get; set; }
+        public string Isim { get; set; }
+        public virtual Baskanlik Baskanlik { get; set; }
     }
 }

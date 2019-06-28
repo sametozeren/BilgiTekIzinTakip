@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BilgiTekIzinTakip.Core.DataAccess
+namespace BilgiTekIzinTakip.DataAccessLayer.EntityFramework
 {
     public class DatabaseContext : DbContext
     {
@@ -14,7 +14,6 @@ namespace BilgiTekIzinTakip.Core.DataAccess
         public DbSet<Baskanlik> Baskanlik { get; set; }
         public DbSet<Mudurluk> Mudurluk { get; set; }
         public DbSet<Seflik> Seflik { get; set; }
-
         public DbSet<Izinler> Izinler { get; set; }
         public DbSet<IzinTipi> IzinTipi { get; set; }
 

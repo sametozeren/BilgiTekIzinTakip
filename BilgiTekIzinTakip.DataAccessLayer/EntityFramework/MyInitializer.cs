@@ -5,14 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BilgiTekIzinTakip.Core.DataAccess
+namespace BilgiTekIzinTakip.DataAccessLayer.EntityFramework
 {
     public class MyInitializer : CreateDatabaseIfNotExists<DatabaseContext>
     {
         protected override void Seed(DatabaseContext context)
         {
-            
-
             context.SaveChanges();
         }
     }

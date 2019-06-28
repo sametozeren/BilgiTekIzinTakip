@@ -14,13 +14,13 @@ namespace BilgiTekIzinTakip.Entities
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [DisplayName("Oluşturulma Tarihi"), ScaffoldColumn(false), Required]
+        [DisplayName("Kayıt Oluşturulma Tarihi"), ScaffoldColumn(false), Required]
         public DateTime CreatedOn { get; set; }
 
-        [DisplayName("Güncelleme Tarihi"), ScaffoldColumn(false), Required]
+        [DisplayName("Kayıt Güncelleme Tarihi"), ScaffoldColumn(false), Required]
         public DateTime ModifiedOn { get; set; }
 
-        [DisplayName("Güncelleyen Kullanıcı"), ScaffoldColumn(false), Required, StringLength(30)]
+        [DisplayName("Kayıtı Güncelleyen Kullanıcı"), ScaffoldColumn(false), Required, StringLength(30)]
         public string ModifiedUsername { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BilgiTekIzinTakip.Core.DataAccess;
+using BilgiTekIzinTakip.DataAccessLayer.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,10 @@ namespace BilgiTekIzinTakip.BusinessLayer
 {
     public class Test
     {
-       public Test()
+        public Test()
         {
             DatabaseContext db = new DatabaseContext();
             db.Database.CreateIfNotExists();
-
-
-
         }
 
     }

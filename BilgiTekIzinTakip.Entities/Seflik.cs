@@ -8,16 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BilgiTekIzinTakip.Entities
-{ [Table("Seflik")]
-    public class Seflik
+{
+    [Table("Seflik")]
+    public class Seflik:MyEntityBase
     {
 
         [DisplayName("İsim"), Required(ErrorMessage = "{0} alanı gereklidir."), StringLength(25, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır.")]
-        public String Isim { get; set; }
+        public string Isim { get; set; }
        
-        public virtual Baskanlik BaskanlikID { get; set; }
+        public virtual Baskanlik Baskanlik { get; set; }
   
-        public virtual Mudurluk MudurlukID { get; set; }
+        public virtual Mudurluk Mudurluk { get; set; }
 
 
     }

@@ -14,10 +14,9 @@ namespace BilgiTekIzinTakip.Entities
     {
 
         [DisplayName("İzin Türü"), StringLength(50, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır."), Required(ErrorMessage = "{0} alanı gereklidir.")]
+        public string IzinTuru { get; set; }
 
-        public String IzinTuru { get; set; }
-
-        public virtual Izinler IzinlerId  { get; set; }
+        public virtual Izinler Izinler  { get; set; }
 
 
 
