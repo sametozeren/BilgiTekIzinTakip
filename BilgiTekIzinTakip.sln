@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilgiTekIzinTakip.BusinessLayer", "BilgiTekIzinTakip.BusinessLayer\BilgiTekIzinTakip.BusinessLayer.csproj", "{41B48316-5EAB-4B93-A6F2-8EB887AEF6B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilgiTekIzinTakip.Core", "BilgiTekIzinTakip.Core\BilgiTekIzinTakip.Core.csproj", "{98CF63C7-8B64-434D-BE53-01A0FB6B8191}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilgiTekIzinTakip.DataAccessLayer", "BilgiTekIzinTakip.DataAccessLayer\BilgiTekIzinTakip.DataAccessLayer.csproj", "{E18ECC2E-F5EB-46D7-AD35-F76103875E26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilgiTekIzinTakip.Entities", "BilgiTekIzinTakip.Entities\BilgiTekIzinTakip.Entities.csproj", "{9B199EB0-6AD6-4A78-A31B-9AC02C9898DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilgiTekIzinTakip.Common", "BilgiTekIzinTakip.Common\BilgiTekIzinTakip.Common.csproj", "{0DBB9A97-AAC0-4CA2-BBB8-71B1584A0332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilgiTekIzinTakip.WebApp", "BilgiTekIzinTakip.WebApp\BilgiTekIzinTakip.WebApp.csproj", "{72291C8E-8FC9-4792-95B8-FFC608ECD51C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41B48316-5EAB-4B93-A6F2-8EB887AEF6B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41B48316-5EAB-4B93-A6F2-8EB887AEF6B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41B48316-5EAB-4B93-A6F2-8EB887AEF6B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41B48316-5EAB-4B93-A6F2-8EB887AEF6B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98CF63C7-8B64-434D-BE53-01A0FB6B8191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98CF63C7-8B64-434D-BE53-01A0FB6B8191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98CF63C7-8B64-434D-BE53-01A0FB6B8191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98CF63C7-8B64-434D-BE53-01A0FB6B8191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E18ECC2E-F5EB-46D7-AD35-F76103875E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E18ECC2E-F5EB-46D7-AD35-F76103875E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E18ECC2E-F5EB-46D7-AD35-F76103875E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E18ECC2E-F5EB-46D7-AD35-F76103875E26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B199EB0-6AD6-4A78-A31B-9AC02C9898DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B199EB0-6AD6-4A78-A31B-9AC02C9898DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B199EB0-6AD6-4A78-A31B-9AC02C9898DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B199EB0-6AD6-4A78-A31B-9AC02C9898DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DBB9A97-AAC0-4CA2-BBB8-71B1584A0332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DBB9A97-AAC0-4CA2-BBB8-71B1584A0332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DBB9A97-AAC0-4CA2-BBB8-71B1584A0332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DBB9A97-AAC0-4CA2-BBB8-71B1584A0332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72291C8E-8FC9-4792-95B8-FFC608ECD51C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72291C8E-8FC9-4792-95B8-FFC608ECD51C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72291C8E-8FC9-4792-95B8-FFC608ECD51C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72291C8E-8FC9-4792-95B8-FFC608ECD51C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {734E390E-6C54-4972-8297-410C9A91670C}
+	EndGlobalSection
+EndGlobal
