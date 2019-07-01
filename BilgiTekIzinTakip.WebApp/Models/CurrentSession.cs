@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BilgiTekIzinTakip.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,12 +8,11 @@ namespace BilgiTekIzinTakip.WebApp.Models
 {
     public class CurrentSession
     {
-        /* session
-        public static EvernoteUser User
+        public static Personel User
         {
             get
             {
-                return Get<EvernoteUser>("login");
+                return Get<Personel>("login");
             }
         }
 
@@ -45,6 +45,6 @@ namespace BilgiTekIzinTakip.WebApp.Models
         {
             HttpContext.Current.Session.Clear();
         }
-        */
+        
     }
 }

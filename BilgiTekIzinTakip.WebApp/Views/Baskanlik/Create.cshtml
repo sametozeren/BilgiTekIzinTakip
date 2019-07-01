@@ -1,10 +1,10 @@
 ﻿@model BilgiTekIzinTakip.Entities.Baskanlik
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Başkanlık Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,9 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Baskanlik</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Isim, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
