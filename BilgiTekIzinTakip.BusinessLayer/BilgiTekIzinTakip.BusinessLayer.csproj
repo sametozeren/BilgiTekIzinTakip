@@ -49,8 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ManagerBase.cs" />
+    <Compile Include="BaskanlikManager.cs" />
+    <Compile Include="IzinlerManager.cs" />
+    <Compile Include="IzinTipiManager.cs" />
+    <Compile Include="MudurlukManager.cs" />
+    <Compile Include="PersonelManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result\BusinessLayerResult.cs" />
+    <Compile Include="SeflikManager.cs" />
     <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>

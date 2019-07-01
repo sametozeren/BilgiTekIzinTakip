@@ -95,11 +95,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaskanlikController.cs" />
+    <Compile Include="Controllers\IzinlerController.cs" />
+    <Compile Include="Controllers\IzinTipiController.cs" />
+    <Compile Include="Controllers\MudurlukController.cs" />
+    <Compile Include="Controllers\PersonelController.cs" />
+    <Compile Include="Controllers\SeflikController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -113,6 +127,37 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Izinler\Create.cshtml" />
+    <Content Include="Views\Izinler\Delete.cshtml" />
+    <Content Include="Views\Izinler\Details.cshtml" />
+    <Content Include="Views\Izinler\Edit.cshtml" />
+    <Content Include="Views\Izinler\Index.cshtml" />
+    <Content Include="Views\IzinTipi\Create.cshtml" />
+    <Content Include="Views\IzinTipi\Delete.cshtml" />
+    <Content Include="Views\IzinTipi\Details.cshtml" />
+    <Content Include="Views\IzinTipi\Edit.cshtml" />
+    <Content Include="Views\IzinTipi\Index.cshtml" />
+    <Content Include="Views\Baskanlik\Create.cshtml" />
+    <Content Include="Views\Baskanlik\Delete.cshtml" />
+    <Content Include="Views\Baskanlik\Details.cshtml" />
+    <Content Include="Views\Baskanlik\Edit.cshtml" />
+    <Content Include="Views\Baskanlik\Index.cshtml" />
+    <Content Include="Views\Mudurluk\Create.cshtml" />
+    <Content Include="Views\Mudurluk\Delete.cshtml" />
+    <Content Include="Views\Mudurluk\Details.cshtml" />
+    <Content Include="Views\Mudurluk\Edit.cshtml" />
+    <Content Include="Views\Mudurluk\Index.cshtml" />
+    <Content Include="Views\Seflik\Create.cshtml" />
+    <Content Include="Views\Seflik\Delete.cshtml" />
+    <Content Include="Views\Seflik\Details.cshtml" />
+    <Content Include="Views\Seflik\Edit.cshtml" />
+    <Content Include="Views\Seflik\Index.cshtml" />
+    <Content Include="Views\Personel\Create.cshtml" />
+    <Content Include="Views\Personel\Delete.cshtml" />
+    <Content Include="Views\Personel\Details.cshtml" />
+    <Content Include="Views\Personel\Edit.cshtml" />
+    <Content Include="Views\Personel\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -122,7 +167,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BilgiTekIzinTakip.BusinessLayer\BilgiTekIzinTakip.BusinessLayer.csproj">
