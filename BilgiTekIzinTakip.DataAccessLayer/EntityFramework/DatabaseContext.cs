@@ -20,9 +20,9 @@ namespace BilgiTekIzinTakip.DataAccessLayer.EntityFramework
         public DbSet<Personel> Personel { get; set; }
 
 
-        //public DatabaseContext()
-        //{
-        //    Database.SetInitializer(new MyInitializer());
-        //}
+        public DatabaseContext()
+        {
+            Database.SetInitializer(new MyInitializer());
+        }
     }
 }

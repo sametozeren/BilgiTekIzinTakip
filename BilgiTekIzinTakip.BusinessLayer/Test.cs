@@ -14,7 +14,7 @@ namespace BilgiTekIzinTakip.BusinessLayer
         public Test()
         {
             DatabaseContext db = new DatabaseContext();
-            db.Database.CreateIfNotExists();
+            db.Baskanlik.ToList();
         }
 
     }
