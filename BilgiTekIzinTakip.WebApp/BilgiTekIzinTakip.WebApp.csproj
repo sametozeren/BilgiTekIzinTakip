@@ -844,7 +844,6 @@
     <Content Include="Content\dist\js\sidebarmenu.js" />
     <Content Include="Content\dist\js\waves.js" />
     <Content Include="Global.asax" />
-    <Content Include="App_Code\Bootstrap.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

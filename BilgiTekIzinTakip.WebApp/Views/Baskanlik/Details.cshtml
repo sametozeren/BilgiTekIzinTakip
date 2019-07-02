@@ -1,14 +1,13 @@
 ﻿@model BilgiTekIzinTakip.Entities.Baskanlik
 
 @{
-    ViewBag.Title = "Başkanlık";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Details";
 }
 
-<h2>Detaylar</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>Başkanlık</h4>
+    <h4>Baskanlik</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -22,6 +21,6 @@
     </dl>
 </div>
 <p>
-    @Bootstrap.LinkButton("/Baskanlik/Edit/" + Model.Id, "warning", "btn-sm", "Edit", "edit", "Detay")
-    @Bootstrap.LinkButton("/Baskanlik/Index", "secondary", "btn-sm", "Back To List", "long-arrow-alt-left", "Back To List")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

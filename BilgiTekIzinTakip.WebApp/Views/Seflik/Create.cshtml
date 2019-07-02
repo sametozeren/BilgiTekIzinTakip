@@ -1,35 +1,22 @@
-﻿
-@model BilgiTekIzinTakip.Entities.Seflik
+﻿@model BilgiTekIzinTakip.Entities.Seflik
 
 @{
-    ViewBag.Title = "Şeflik";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create";
 }
 
+<h2>Create</h2>
 
 
-
-@using (Html.BeginForm())
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-
+    
     <div class="form-horizontal">
-        <h4>Şeflik Ekle</h4>
+        <h4>Seflik</h4>
         <hr />
-        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-
-        
-
-        
-
-
-      
-
-
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-
-            <label class="col-md-3 m-t-15">Şeflik İsmi</label>
-
+            @Html.LabelFor(model => model.Isim, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Isim, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Isim, "", new { @class = "text-danger" })
@@ -37,13 +24,15 @@
         </div>
 
         <div class="form-group">
-            <button type="button" class="btn btn-success">Ekle</button>
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+    @Html.ActionLink("Back to List", "Index")
 </div>
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
