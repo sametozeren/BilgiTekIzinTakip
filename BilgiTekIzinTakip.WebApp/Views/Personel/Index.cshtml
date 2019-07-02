@@ -1,14 +1,13 @@
 ﻿@model IEnumerable<BilgiTekIzinTakip.Entities.Personel>
 
 @{
-    ViewBag.Title = "Personel";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
 }
 
-<h2>Personel</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -60,9 +59,9 @@
             @Html.DisplayFor(modelItem => item.Sifre)
         </td>
         <td>
-            @Bootstrap.LinkButton("/Personel/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
-            @Bootstrap.LinkButton("/Personel/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
-            @Bootstrap.LinkButton("/Personel/Delete/" + item.Id, "danger", "btn-sm", "Düzenle", "delete", "Sil")/
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }
