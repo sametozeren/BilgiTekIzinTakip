@@ -1,14 +1,15 @@
 ﻿@model BilgiTekIzinTakip.Entities.IzinTipi
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "İzin Tipi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>Sil</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Bunu silmek istediğinizden emin misiniz?</h3>
 <div>
-    <h4>IzinTipi</h4>
+    <h4>İzin Tipi</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -21,12 +22,13 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
+    <div class="form-actions no-color">
+        @Bootstrap.Button("danger", "btn-secondary", "submit", "trash-alt", "Sil")
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+    </div>
     }
 </div>
