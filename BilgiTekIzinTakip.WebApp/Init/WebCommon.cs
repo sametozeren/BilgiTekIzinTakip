@@ -1,4 +1,6 @@
 ﻿using BilgiTekIzinTakip.Common;
+using BilgiTekIzinTakip.Entities;
+using BilgiTekIzinTakip.WebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,20 +10,14 @@ namespace BilgiTekIzinTakip.WebApp.Init
 {
     public class WebCommon : ICommon
     {
-        /* örnekkk kullanıcı session kontrolu
         public string GetCurrentUsername()
         {
-            EvernoteUser user = CurrentSession.User;
+            Personel user = CurrentSession.User;
 
             if (user != null)
-                return user.Username;
+                return user.KullaniciAdi;
             else
                 return "system";
-        }
-        */
-        public string GetCurrentUsername()
-        {
-            throw new NotImplementedException();
         }
     }
 }
