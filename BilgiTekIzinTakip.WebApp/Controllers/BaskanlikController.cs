@@ -51,6 +51,8 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Baskanlik baskanlik)
         {
+            ModelState.Remove("ModifiedUsername");
+            ModelState.Remove("CreatedOn");
             if (ModelState.IsValid)
             {
                 db.Insert(baskanlik);
@@ -81,8 +83,10 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit( Baskanlik baskanlik)
+        public ActionResult Edit(Baskanlik baskanlik)
         {
+            ModelState.Remove("ModifiedUsername");
+            ModelState.Remove("CreatedOn");
             if (ModelState.IsValid)
             {
                 db.Update(baskanlik);
