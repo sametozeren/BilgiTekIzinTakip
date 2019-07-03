@@ -1,14 +1,14 @@
 ﻿@model BilgiTekIzinTakip.Entities.IzinTipi
 
 @{
-    ViewBag.Title = "İzin Tipi";
+   
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Detaylar</h2>
+<h2>İzin Tipi</h2>
 
 <div>
-    <h4>İzin Tipi</h4>
+    <h4>Detaylar</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -22,6 +22,6 @@
     </dl>
 </div>
 <p>
-    @Bootstrap.LinkButton("/IzinTipi/Edit/" + Model.Id, "warning", "btn-sm", "Edit", "edit", "Detay")
-    @Bootstrap.LinkButton("/IzinTipi/Index", "secondary", "btn-sm", "Back To List", "long-arrow-alt-left", "Back To List")
+    @Bootstrap.LinkButton("/Baskanlik/Edit/" + Model.Id, "warning", "btn btn", "Düzenle", "tooltip-edit", "Düzenle")
+    @Bootstrap.LinkButton("/Baskanlik/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
 </p>

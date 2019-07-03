@@ -1,15 +1,15 @@
 ﻿@model BilgiTekIzinTakip.Entities.Seflik
 
 @{
-    ViewBag.Title = "Şeflik";
+   
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Sil</h2>
+<h2>Şeflik</h2>
 
-<h3>Bunu silmek istediğinizden emin misiniz?</h3>
+<h3>Sil</h3>
 <div>
-    <h4>Şeflik</h4>
+    <h4>Bunu silmek istediğinizden emin misiniz?</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -27,9 +27,9 @@
         @Html.AntiForgeryToken()
 
     <div class="form-actions no-color">
-        @Bootstrap.Button("danger", "btn-secondary", "submit", "trash-alt", "Sil")
+        @Bootstrap.Button("danger", "btn-secondary", "submit", "delete", "Sil")
 
-        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+        @Bootstrap.LinkButton("/Seflik/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
     </div>
     }
 </div>
