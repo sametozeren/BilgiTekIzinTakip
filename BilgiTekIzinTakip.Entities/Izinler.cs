@@ -15,6 +15,5 @@ namespace BilgiTekIzinTakip.Entities
         public DateTime BitisTarihi { get; set; }
         public virtual Personel Personel { get; set; }
         public virtual IzinTipi IzinTipi { get; set; }
-
-   }
+    }
 }

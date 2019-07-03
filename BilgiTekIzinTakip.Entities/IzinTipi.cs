@@ -17,6 +17,6 @@ namespace BilgiTekIzinTakip.Entities
         public string IzinTuru { get; set; }
         [DisplayName("İzin Türü Renk Kodu"),StringLength(50,ErrorMessage ="{0} alanı max.{1} karakter olmalıdır."),Required(ErrorMessage ="{0} alanı gereklidir.")]
         public string RenkKodu { get; set; }
-        public virtual List<Izinler> Izinler  { get; set; }
+        public virtual List<Izinler> Izinler { get; set; }
     }
 }

@@ -15,8 +15,8 @@ namespace BilgiTekIzinTakip.Entities
     {
         [DisplayName("İsim"), StringLength(50, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır."), Required(ErrorMessage = "{0} alanı gereklidir.")]
         public string Isim { get; set; }
-        public List<Personel> Personel { get; set; }
-        public List<Mudurluk> Mudurluk { get; set; }
-        public List<Seflik> Seflik { get; set; }
+        public virtual List<Mudurluk> Mudurluk { get; set; }
+        public virtual List<Seflik> Seflik{ get; set; }
+        public virtual List<Personel> Personel { get; set; }
     }
 }

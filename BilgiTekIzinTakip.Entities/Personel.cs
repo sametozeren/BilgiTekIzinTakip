@@ -27,8 +27,11 @@ namespace BilgiTekIzinTakip.Entities
         [DisplayName("Şifre"), StringLength(25, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır."), Required(ErrorMessage = "{0} alanı gereklidir.")]
         public string Sifre { get; set; }
         public bool IsAdmin { get; set; }
+        public int? BaskanlikId { get; set; }
+        public int? MudurlukId { get; set; }
+        public int? SeflikId { get; set; }
         public virtual Baskanlik Baskanlik { get; set; }
-        public virtual Mudurluk Mudurluk { get; set; }
+        public virtual Mudurluk Mudurluk{ get; set; }
         public virtual Seflik Seflik { get; set; }
         public virtual List<Izinler> Izinler { get; set; }
 
