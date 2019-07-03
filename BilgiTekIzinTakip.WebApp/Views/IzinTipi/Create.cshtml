@@ -16,19 +16,19 @@
     <h4>İzin Tipi Ekle</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
+    <div class="form-group row">
 
 
-        <label class="col-md-3 m-t-15">İzin Türü</label>
-        <div class="col-md-10">
+        <label class="col-md-2 m-t-15">İzin Türü</label>
+        <div class="col-md-4">
             @Html.EditorFor(model => model.IzinTuru, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.IzinTuru, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group row">
-        <label class="col-md-3 m-t-15">Renk Kodu</label>
-        <div class="col-md-9" data-select2-id="11">
+        <label class="col-md-2 m-t-15">Renk Kodu</label>
+        <div class="col-md-4" data-select2-id="11">
             <select class="select2 form-control custom-select select2-hidden-accessible" style="width: 100%; height:36px;" data-select2-id="1" tabindex="-1" aria-hidden="true">
                 <option data-select2-id="3">Seç</option>
 
@@ -59,13 +59,15 @@
         </div>
     </div>
 
-    <div class="form-group">
-        <button type="button" class="btn btn-success">Ekle</button>
+    <div class="form-group row">
+        <div class="col-md-2 m-t-15">
+            <button type="button" class="btn btn-success">Ekle</button>
+        </div>
     </div>
-</div>
+    </div>
 }
 <div>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+    @Bootstrap.LinkButton("/IzinTipi/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
 </div>
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>

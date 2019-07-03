@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<BilgiTekIzinTakip.Entities.Mudurluk>
 
 @{
-    ViewBag.Title = "Müdürlük";
+    
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Müdürlük</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+    @Bootstrap.LinkButton("/Mudurluk/Create", "primary", "btn btn", "Yeni Ekle", "plus", "Yeni Ekle")
 </p>
 <table class="table">
     <tr>

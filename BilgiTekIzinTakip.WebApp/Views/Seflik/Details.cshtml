@@ -1,13 +1,13 @@
 ﻿@model BilgiTekIzinTakip.Entities.Seflik
 
 @{
-    ViewBag.Title = "Şeflik";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Detaylar</h2>
+<h2>Şeflik</h2>
 
 <div>
-    <h4>Şeflik</h4>
+    <h4>Detaylar</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -21,6 +21,6 @@
     </dl>
 </div>
 <p>
-    @Bootstrap.LinkButton("/Seflik/Edit/" + Model.Id, "warning", "btn-sm", "Edit", "edit", "Detay")
-    @Bootstrap.LinkButton("/Seflik/Index", "secondary", "btn-sm", "Back To List", "long-arrow-alt-left", "Back To List")
+    @Bootstrap.LinkButton("/Seflik/Edit/" + Model.Id, "warning", "btn btn", "Düzenle", "tooltip-edit", "Düzenle")
+    @Bootstrap.LinkButton("/Seflik/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
 </p>

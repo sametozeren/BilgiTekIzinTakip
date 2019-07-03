@@ -1,10 +1,10 @@
 ﻿@model BilgiTekIzinTakip.Entities.IzinTipi
 
 @{
-    ViewBag.Title = "İzin Tipi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Düzenleme</h2>
+<h2>İzin Tipi</h2>
 
 
 @using (Html.BeginForm())
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>İzin Tipi</h4>
+    <h4>Düzenle</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.Id)
@@ -27,8 +27,8 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            @Bootstrap.Button("success", string.Empty, "submit", "compact-disc", "Kaydet")
-            @Bootstrap.LinkButton("/Baskanlik/Index", "secondary", string.Empty, string.Empty, "long-arrow-alt-left", "Back To List")
+            @Bootstrap.Button("success", string.Empty, "submit", "content-save", "Kaydet")
+            @Bootstrap.LinkButton("/IzinTipi/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
 
         </div>
     </div>

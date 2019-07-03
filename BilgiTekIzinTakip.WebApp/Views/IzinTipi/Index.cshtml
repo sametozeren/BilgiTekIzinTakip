@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<BilgiTekIzinTakip.Entities.IzinTipi>
 
 @{
-    ViewBag.Title = "İzin Tipi";
+    
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>İzin Tipi</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+    @Bootstrap.LinkButton("/IzinTipi/Create", "primary", "btn btn", "Yeni Ekle", "plus", "Yeni Ekle")
 </p>
 <table class="table">
     <tr>
@@ -26,7 +26,7 @@
         <td>
             @Bootstrap.LinkButton("/IzinTipi/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
             @Bootstrap.LinkButton("/IzinTipi/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
-            @Bootstrap.LinkButton("/IzinTipi/Delete/" + item.Id, "danger", "btn-sm", "Düzenle", "delete", "Sil")/
+            @Bootstrap.LinkButton("/IzinTipi/Delete/" + item.Id, "danger", "btn-sm", "Düzenle", "delete", "Sil")
         </td>
     </tr>
 }
