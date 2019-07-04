@@ -13,63 +13,55 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>İzin Tipi Ekle</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group row">
+
+    <div class="card">
+     
+        <div class="card-body">
+            <h4>İzin Tipi Ekle</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group row">
+
+                <label class="col-md-2 m-t-15">İzin Türü</label>
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.IzinTuru, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.IzinTuru, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
 
-        <label class="col-md-2 m-t-15">İzin Türü</label>
-        <div class="col-md-4">
-            @Html.EditorFor(model => model.IzinTuru, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.IzinTuru, "", new { @class = "text-danger" })
+            <div class="form-group row">
+
+
+                <label class="col-md-2 m-t-15">Renk Kodu</label>
+
+
+                <div class="col-md-4">
+
+                    @Html.ValidationMessageFor(model => model.RenkKodu, "", new { @class = "text-danger" })
+                    <input type="text" id="hue-demo" class="form-control demo" data-control="hue" value="#ff6161">
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-2 m-t-15">
+                    <button type="button" class="btn btn-success">Ekle</button>
+                </div>
+            </div>
+            <div>
+                @Bootstrap.LinkButton("/IzinTipi/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
+            </div>
+
+
         </div>
+       
     </div>
-
-    <div class="form-group row">
-        <label class="col-md-2 m-t-15">Renk Kodu</label>
-        <div class="col-md-4" data-select2-id="11">
-            <select class="select2 form-control custom-select select2-hidden-accessible" style="width: 100%; height:36px;" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                <option data-select2-id="3">Seç</option>
-
-                <option value="AK" data-select2-id="20">Alaska</option>
-                <option value="HI" data-select2-id="21">Hawaii</option>
-                <option value="CT" data-select2-id="54">Connecticut</option>
-                <option value="DE" data-select2-id="55">Delaware</option>
-                <option value="FL" data-select2-id="56">Florida</option>
-                <option value="GA" data-select2-id="57">Georgia</option>
-                <option value="IN" data-select2-id="58">Indiana</option>
-                <option value="ME" data-select2-id="59">Maine</option>
-                <option value="MD" data-select2-id="60">Maryland</option>
-                <option value="MA" data-select2-id="61">Massachusetts</option>
-                <option value="MI" data-select2-id="62">Michigan</option>
-                <option value="NH" data-select2-id="63">New Hampshire</option>
-                <option value="NJ" data-select2-id="64">New Jersey</option>
-                <option value="NY" data-select2-id="65">New York</option>
-                <option value="NC" data-select2-id="66">North Carolina</option>
-                <option value="OH" data-select2-id="67">Ohio</option>
-                <option value="PA" data-select2-id="68">Pennsylvania</option>
-                <option value="RI" data-select2-id="69">Rhode Island</option>
-                <option value="SC" data-select2-id="70">South Carolina</option>
-                <option value="VT" data-select2-id="71">Vermont</option>
-                <option value="VA" data-select2-id="72">Virginia</option>
-                <option value="WV" data-select2-id="73">West Virginia</option>
-
-            </select><span class="select2 select2-container select2-container--default select2-container--below select2-container--open" dir="ltr" data-select2-id="2" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="true" tabindex="0" aria-labelledby="select2-sp3w-container" aria-owns="select2-sp3w-results" aria-activedescendant="select2-sp3w-result-mtqc-Select"><span class="select2-selection__rendered" id="select2-sp3w-container" role="textbox" aria-readonly="true" title="Select"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <div class="col-md-2 m-t-15">
-            <button type="button" class="btn btn-success">Ekle</button>
-        </div>
-    </div>
-    </div>
-}
-<div>
-    @Bootstrap.LinkButton("/IzinTipi/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
+    
 </div>
+            }
+          
 
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+            <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+            <script src="~/Scripts/jquery.validate.min.js"></script>
+            <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

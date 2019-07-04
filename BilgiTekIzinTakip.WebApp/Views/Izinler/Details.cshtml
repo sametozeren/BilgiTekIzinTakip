@@ -1,13 +1,13 @@
 ﻿@model BilgiTekIzinTakip.Entities.Izinler
 
 @{
-    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>İzinler</h2>
 
 <div>
-    <h4>Izinler</h4>
+    <h4>Detaylar</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -26,9 +26,23 @@
             @Html.DisplayFor(model => model.BitisTarihi)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Personel.Ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personel.Ad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IzinTipi.IzinTuru)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IzinTipi.IzinTuru)
+        </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Bootstrap.LinkButton("/Izinler/Edit/" + Model.Id, "warning", "btn btn", "Düzenle", "tooltip-edit", "Düzenle")
+    @Bootstrap.LinkButton("/Izinler/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
 </p>

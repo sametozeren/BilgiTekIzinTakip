@@ -8,16 +8,22 @@
 <h2>İzinler</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+    @Bootstrap.LinkButton("/Izinler/Create", "primary", "btn btn", "Yeni Ekle", "plus", "Yeni Ekle")
 </p>
 <table class="table">
     <tr>
         <th>
-            
+
             @Html.DisplayNameFor(model => model.BaslangicTarihi)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.BitisTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Personel.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IzinTipi.IzinTuru)
         </th>
         <th></th>
     </tr>
@@ -29,6 +35,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.BitisTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Personel.Ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IzinTipi.IzinTuru)
         </td>
         <td>
             @Bootstrap.LinkButton("/Izinler/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
