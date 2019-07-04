@@ -7,12 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" sizes="16x16" href="~/Content/assets/images/favicon.png">
     <title>@ViewBag.Title</title>
-        <link href="~/Content/assets/libs/flot/css/float-chart.css" rel="stylesheet">
-        <link href="~/Content/dist/css/style.min.css" rel="stylesheet">
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <link href="~/Content/assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <link href="~/Content/dist/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/libs/jquery-minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
@@ -22,6 +26,8 @@
             <div class="lds-pos"></div>
         </div>
     </div>
+    @RenderSection("Scripts", false)
+
     <div id="main-wrapper">
         @Html.Partial("_PartialHeader")
         @Html.Partial("_PartialSidebar")
@@ -36,27 +42,70 @@
             <div class="container-fluid">
                 @RenderBody()
             </div>
+
+
+
         </div>
 
     </div>
 
-            <script src="~/Content/assets/libs/jquery/dist/jquery.min.js"></script>
-            <script src="~/Content/assets/libs/popper.js/dist/umd/popper.min.js"></script>
-            <script src="~/Content/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-            <script src="~/Content/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-            <script src="~/Content/assets/extra-libs/sparkline/sparkline.js"></script>
-            <script src="~/Content/dist/js/waves.js"></script>
-            <script src="~/Content/dist/js/sidebarmenu.js"></script>
-            <script src="~/Content/dist/js/custom.min.js"></script>
-            <script src="~/Content/assets/libs/flot/excanvas.js"></script>
-            <script src="~/Content/assets/libs/flot/jquery.flot.js"></script>
-            <script src="~/Content/assets/libs/flot/jquery.flot.pie.js"></script>
-            <script src="~/Content/assets/libs/flot/jquery.flot.time.js"></script>
-            <script src="~/Content/assets/libs/flot/jquery.flot.stack.js"></script>
-            <script src="~/Content/assets/libs/flot/jquery.flot.crosshair.js"></script>
-            <script src="~/Content/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
-            <script src="~/Content/dist/js/pages/chart/chart-page-init.js"></script>
+    <script src="~/Content/assets/libs/jquery/dist/jquery.min.js"></script>
 
+    <script src="~/Content/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/Content/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/Content/assets/extra-libs/sparkline/sparkline.js"></script>
+    <script src="~/Content/dist/js/waves.js"></script>
+    <script src="~/Content/dist/js/sidebarmenu.js"></script>
+    <script src="~/Content/dist/js/custom.min.js"></script>
+    <script src="~/Content/assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+    <script src="~/Content/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/Content/assets/libs/flot/excanvas.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="~/Content/assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="~/Content/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="~/Content/dist/js/pages/chart/chart-page-init.js"></script>
+    <script>
+        $('.demo').each(function () {
+            //
+            // Dear reader, it's actually very easy to initialize MiniColors. For example:
+            //
+            //  $(selector).minicolors();
+            //
+            // The way I've done it below is just for the demo, so don't get confused
+            // by it. Also, data- attributes aren't supported at this time...they're
+            // only used for this demo.
+            //
+            $(this).minicolors({
+                control: $(this).attr('data-control') || 'hue',
+                position: $(this).attr('data-position') || 'bottom left',
+
+                change: function (value, opacity) {
+                    if (!value) return;
+                    if (opacity) value += ', ' + opacity;
+                    if (typeof console === 'object') {
+                        console.log(value);
+                    }
+                },
+                theme: 'bootstrap'
+            });
+
+        });
+
+        jQuery('.mydatepicker').datepicker();
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+    </script>
+
+    
 </body>
 
 </html>

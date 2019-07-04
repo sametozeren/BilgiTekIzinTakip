@@ -1,7 +1,7 @@
 ﻿ @model BilgiTekIzinTakip.Entities.Personel
 
 @{
-    ViewBag.Title = "Personel Ekle";
+    ViewBag.Title = "Personel";
 }
 
 
@@ -14,9 +14,9 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <form class="form-horizontal">
+                
                 <div class="card-body">
-                    <h4 class="card-title">Personal Info</h4>
+                    <h4 class="card-title">Personal Bilgileri</h4>
                     <div class="form-group">
                         <hr />
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -45,6 +45,30 @@
                         </div>
 
                         <div class="form-group row">
+                            @Html.LabelFor(model => model.Baskanlik.Isim, htmlAttributes: new { @class = "col-md-2 control-label" })
+                            <div class="col-md-4">
+
+                                @Html.DropDownList("BaskanlikId", null, "Seçiniz", htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Mudurluk.Isim, htmlAttributes: new { @class = "col-md-2 control-label" })
+                            <div class="col-md-4">
+
+                                @Html.DropDownList("MudurlukId", null, "Seçiniz", htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Seflik.Isim, htmlAttributes: new { @class = "col-md-2 control-label" })
+                            <div class="col-md-4">
+
+                                @Html.DropDownList("SeflikId", null, "Seçiniz", htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "col-md-2 control-label" })
                             <div class="col-md-4">
                                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
@@ -61,34 +85,34 @@
                         </div>
 
                         <div class="form-group row">
-                            @Html.LabelFor(model => model.KullaniciAdi, htmlAttributes: new { @class = "col-md-2 control-label" })
-                            <div class="col-md-4">
-                                @Html.EditorFor(model => model.KullaniciAdi, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.KullaniciAdi, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
 
-                        <div class="form-group row">
-                            @Html.LabelFor(model => model.Sifre, htmlAttributes: new { @class = "col-md-2 control-label" })
-                            <div class="col-md-4">
-                                @Html.EditorFor(model => model.Sifre, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Sifre, "", new { @class = "text-danger" })
+                            <div class="col-md-2 m-t-15">
+                                <button type="button" class="btn btn-success">Ekle</button>
                             </div>
                         </div>
-                    </div>
-                    <div class="border-top">
-                        <div class="col-md-3 col-sm-12">
-                            <input type="submit" value="Ekle" class="btn btn-success" />
+                        <div>
+
+                            @Bootstrap.LinkButton("/Personel/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
+
                         </div>
                     </div>
+
+
                 </div>
-            </form>
+
+
         </div>
-                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
-         
+
+        
     </div>
 </div>
-}
+
+    }
+
+    
+
+
+
 
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>

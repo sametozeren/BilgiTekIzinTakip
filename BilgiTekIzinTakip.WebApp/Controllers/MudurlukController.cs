@@ -41,6 +41,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         public ActionResult Create()
         {
             ViewBag.BaskanlikId = new SelectList(baskanlikManager.List(),"Id","Isim");
+
             return View();
         }
 

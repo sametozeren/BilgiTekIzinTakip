@@ -15,6 +15,10 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
     public class PersonelController : Controller
     {
         private PersonelManager db = new PersonelManager();
+        private BaskanlikManager baskanlikManager = new BaskanlikManager();
+        private MudurlukManager mudurlukManager = new MudurlukManager();
+        private SeflikManager seflikManager = new SeflikManager();
+
 
         // GET: Personel
         public ActionResult Index()
@@ -40,6 +44,10 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         // GET: Personel/Create
         public ActionResult Create()
         {
+
+            ViewBag.BaskanlikId = new SelectList(baskanlikManager.List(), "Id", "Isim");
+            ViewBag.MudurlukId = new SelectList(mudurlukManager.List(), "Id", "Isim");
+            ViewBag.SeflikId = new SelectList(seflikManager.List(), "Id", "Isim");
             return View();
         }
 
@@ -71,6 +79,11 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return HttpNotFound();
             }
+
+
+            ViewBag.BaskanlikId = new SelectList(baskanlikManager.List(), "Id", "Isim");
+            ViewBag.MudurlukId = new SelectList(mudurlukManager.List(), "Id", "Isim");
+            ViewBag.SeflikId = new SelectList(seflikManager.List(), "Id", "Isim");
             return View(personel);
         }
 

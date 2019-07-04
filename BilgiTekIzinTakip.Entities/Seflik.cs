@@ -13,7 +13,7 @@ namespace BilgiTekIzinTakip.Entities
     public class Seflik:MyEntityBase
     {
 
-        [DisplayName("İsim"), Required(ErrorMessage = "{0} alanı gereklidir."), StringLength(25, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır.")]
+        [DisplayName("Şeflik İsmi"), Required(ErrorMessage = "{0} alanı gereklidir."), StringLength(25, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır.")]
         public string Isim { get; set; }
         public int BaskanlikId { get; set; }
         public int? MudurlukId { get; set; }

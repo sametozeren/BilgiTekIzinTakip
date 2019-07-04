@@ -15,7 +15,8 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
     public class SeflikController : Controller
     {
         private SeflikManager db = new SeflikManager();
-        private BaskanlikManager basm = new BaskanlikManager();
+        private BaskanlikManager baskanlikManager = new BaskanlikManager();
+        private MudurlukManager mudurlukManager = new MudurlukManager();
 
         // GET: Seflik
         public ActionResult Index()
@@ -41,8 +42,9 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         // GET: Seflik/Create
         public ActionResult Create()
         {
-            List<Baskanlik> bas = basm.List();
-            ViewBag.Baskanlik = bas;
+            ViewBag.BaskanlikId = new SelectList(baskanlikManager.List(), "Id", "Isim");
+
+            ViewBag.MudurlukId = new SelectList(mudurlukManager.List(), "Id", "Isim");
             return View();
         }
 
