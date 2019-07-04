@@ -63,7 +63,6 @@
                         <div class="form-group row">
                             @Html.LabelFor(model => model.Seflik.Isim, htmlAttributes: new { @class = "col-md-2 control-label" })
                             <div class="col-md-4">
-
                                 @Html.DropDownList("SeflikId", null, "Seçiniz", htmlAttributes: new { @class = "control-label col-md-12" })
                             </div>
                         </div>
@@ -83,11 +82,18 @@
                                 @Html.ValidationMessageFor(model => model.DahiliNumarasi, "", new { @class = "text-danger" })
                             </div>
                         </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.IsAdmin, htmlAttributes: new { @class = "col-md-2 control-label" })
+                            <div class="col-md-4">
+                                @Html.CheckBoxFor(model=>model.IsAdmin,false)
+                                @Html.ValidationMessageFor(model => model.IsAdmin, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
                         <div class="form-group row">
 
                             <div class="col-md-2 m-t-15">
-                                <button type="button" class="btn btn-success">Ekle</button>
+                                <button type="submit" class="btn btn-success">Ekle</button>
                             </div>
                         </div>
                         <div>

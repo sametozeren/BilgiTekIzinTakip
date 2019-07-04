@@ -22,10 +22,11 @@ namespace BilgiTekIzinTakip.Entities
         public string Email { get; set; }
         [DisplayName("Dahili Numarası")]
         public string DahiliNumarasi { get; set; }
-        [DisplayName("Kullanıcı Adı"), StringLength(25, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır."), Required(ErrorMessage = "{0} alanı gereklidir.")]
+        [DisplayName("Kullanıcı Adı"), StringLength(25, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır.")]
         public string KullaniciAdi { get; set; }
-        [DisplayName("Şifre"), StringLength(150, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır."), Required(ErrorMessage = "{0} alanı gereklidir.")]
+        [DisplayName("Şifre"), StringLength(150, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır.")]
         public string Sifre { get; set; }
+        [DisplayName("Yönetici mi?")]
         public bool IsAdmin { get; set; }
         public int? BaskanlikId { get; set; }
         public int? MudurlukId { get; set; }

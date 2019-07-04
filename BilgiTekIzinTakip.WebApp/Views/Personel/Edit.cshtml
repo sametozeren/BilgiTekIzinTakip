@@ -45,29 +45,29 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Baskanlik.Isim, "", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.DropDownList("BaskanlikId", null, htmlAttributes: new { @class = "control-label col-md-12" })
-                        @Html.ValidationMessageFor(model => model.Baskanlik.Isim, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Baskanlik.Isim, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(x=>x.Baskanlik.Id, (IEnumerable<SelectListItem>)ViewBag.BaskanlikId ,null, htmlAttributes: new { @class = "control-label col-md-12" })
+            @Html.ValidationMessageFor(model => model.Baskanlik.Isim, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Mudurluk.Isim, "", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.DropDownList("MudurlukId", null, htmlAttributes: new { @class = "control-label col-md-12" })
-                        @Html.ValidationMessageFor(model => model.Mudurluk.Isim, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Mudurluk.Isim, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(x=>x.Mudurluk.Id, (IEnumerable<SelectListItem>)ViewBag.MudurlukId , null, htmlAttributes: new { @class = "control-label col-md-12" })
+            @Html.ValidationMessageFor(model => model.Mudurluk.Isim, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Seflik.Isim, "", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.DropDownList("SeflikId", null, htmlAttributes: new { @class = "control-label col-md-12" })
-                        @Html.ValidationMessageFor(model => model.Seflik.Isim, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Seflik.Isim, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(x=>x.Seflik.Id, (IEnumerable<SelectListItem>)ViewBag.SeflikId , null, htmlAttributes: new { @class = "control-label col-md-12" })
+            @Html.ValidationMessageFor(model => model.Seflik.Isim, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
 
 
