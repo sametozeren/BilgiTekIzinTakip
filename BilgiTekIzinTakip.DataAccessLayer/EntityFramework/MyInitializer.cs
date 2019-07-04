@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Helpers;
 
 namespace BilgiTekIzinTakip.DataAccessLayer.EntityFramework
 {
@@ -22,7 +23,7 @@ namespace BilgiTekIzinTakip.DataAccessLayer.EntityFramework
                 Email = "bilmiyorum@gmail.com",
                 DahiliNumarasi = "2007",
                 KullaniciAdi = "nuray",
-                Sifre = "123",
+                Sifre = Crypto.HashPassword("123"),
                 IsAdmin = true,
                 CreatedOn = DateTime.Now.AddHours(1),
                 ModifiedOn = DateTime.Now.AddMinutes(65),
