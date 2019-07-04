@@ -59,8 +59,10 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Personel personel)
         {
-            string hashPassword = Crypto.HashPassword(personel.Sifre);
-            personel.Sifre = hashPassword;
+            ModelState.Remove("ModifiedUsername");
+            ModelState.Remove("CreatedOn");
+            ModelState.Remove("KullaniciAdi");
+            ModelState.Remove("Sifre");
             if (ModelState.IsValid)
             {
                 db.Insert(personel);
@@ -97,6 +99,10 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Personel personel)
         {
+            ModelState.Remove("ModifiedUsername");
+            ModelState.Remove("CreatedOn");
+            ModelState.Remove("KullaniciAdi");
+            ModelState.Remove("Sifre");
             if (ModelState.IsValid)
             {
                 db.Update(personel);

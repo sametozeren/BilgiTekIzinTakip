@@ -43,7 +43,6 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         public ActionResult Create()
         {
             ViewBag.BaskanlikId = new SelectList(baskanlikManager.List(), "Id", "Isim");
-
             ViewBag.MudurlukId = new SelectList(mudurlukManager.List(), "Id", "Isim");
             return View();
         }
@@ -55,6 +54,8 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Seflik seflik)
         {
+            ModelState.Remove("ModifiedUsername");
+            ModelState.Remove("CreatedOn");
             if (ModelState.IsValid)
             {
                 db.Insert(seflik);
