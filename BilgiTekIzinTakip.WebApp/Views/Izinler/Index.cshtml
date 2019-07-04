@@ -6,48 +6,55 @@
 }
 
 <h2>İzinler</h2>
+<div class="form-horizontal">
+    <div class="card">
 
-<p>
-    @Bootstrap.LinkButton("/Izinler/Create", "primary", "btn btn", "Yeni Ekle", "plus", "Yeni Ekle")
-</p>
-<table class="table">
-    <tr>
-        <th>
+        <div class="card-body">
+            <p>
+                @Bootstrap.LinkButton("/Izinler/Create", "primary", "btn btn", "Yeni Ekle", "plus", "Yeni Ekle")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
 
-            @Html.DisplayNameFor(model => model.BaslangicTarihi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BitisTarihi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Personel.Ad)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IzinTipi.IzinTuru)
-        </th>
-        <th></th>
-    </tr>
+                        @Html.DisplayNameFor(model => model.BaslangicTarihi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BitisTarihi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Personel.Ad)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IzinTipi.IzinTuru)
+                    </th>
+                    <th></th>
+                </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BaslangicTarihi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BitisTarihi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Personel.Ad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IzinTipi.IzinTuru)
-        </td>
-        <td>
-            @Bootstrap.LinkButton("/Izinler/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
-            @Bootstrap.LinkButton("/Izinler/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
-            @Bootstrap.LinkButton("/Izinler/Delete/" + item.Id, "danger", "btn-sm", "Düzenle", "delete", "Sil")
-        </td>
-    </tr>
-}
-
-</table>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BaslangicTarihi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BitisTarihi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Personel.Ad)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IzinTipi.IzinTuru)
+                        </td>
+                        <td>
+                            @Bootstrap.LinkButton("/Izinler/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
+                            @Bootstrap.LinkButton("/Izinler/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
+                            @Bootstrap.LinkButton("/Izinler/Delete/" + item.Id, "danger", "btn-sm", "Düzenle", "delete", "Sil")
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+           

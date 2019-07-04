@@ -6,29 +6,36 @@
 }
 
 <h2>Şeflik</h2>
+<div class="form-horizontal">
+    <div class="card">
 
-<p>
-    @Bootstrap.LinkButton("/Seflik/Create", "primary", "btn btn", "Yeni Ekle", "plus", "Yeni Ekle")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Isim)
-        </th>
-        <th></th>
-    </tr>
+        <div class="card-body">
+            <p>
+                @Bootstrap.LinkButton("/Seflik/Create", "primary", "btn btn", "Yeni Ekle", "plus", "Yeni Ekle")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        <h4>Şeflikler</h4>
+                    </th>
+                    <th></th>
+                </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Isim)
-        </td>
-        <td>
-            @Bootstrap.LinkButton("/Seflik/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
-            @Bootstrap.LinkButton("/Seflik/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
-            @Bootstrap.LinkButton("/Seflik/Delete/" + item.Id, "danger", "btn-sm", "Sil", "delete", "Sil")
-        </td>
-    </tr>
-}
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Isim)
+                        </td>
+                        <td>
+                            @Bootstrap.LinkButton("/Seflik/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
+                            @Bootstrap.LinkButton("/Seflik/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
+                            @Bootstrap.LinkButton("/Seflik/Delete/" + item.Id, "danger", "btn-sm", "Sil", "delete", "Sil")
+                        </td>
+                    </tr>
+                }
 
-</table>
+            </table>
+        </div>
+    </div>
+</div>

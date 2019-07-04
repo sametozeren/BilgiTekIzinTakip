@@ -1,27 +1,34 @@
 ﻿@model BilgiTekIzinTakip.Entities.IzinTipi
 
 @{
-   
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>İzin Tipi</h2>
 
-<div>
-    <h4>Detaylar</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.IzinTuru)
-        </dt>
+<div class="form-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.IzinTuru)
-        </dd>
+    <div class="card">
 
-    </dl>
+        <div class="card-body">
+            <h4>Detaylar</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.IzinTuru)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IzinTuru)
+                </dd>
+
+            </dl>
+            <p>
+                @Bootstrap.LinkButton("/Baskanlik/Edit/" + Model.Id, "warning", "btn btn", "Düzenle", "tooltip-edit", "Düzenle")
+                @Bootstrap.LinkButton("/Baskanlik/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
+            </p>
+        </div>
+       
+    </div>
 </div>
-<p>
-    @Bootstrap.LinkButton("/Baskanlik/Edit/" + Model.Id, "warning", "btn btn", "Düzenle", "tooltip-edit", "Düzenle")
-    @Bootstrap.LinkButton("/Baskanlik/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
-</p>

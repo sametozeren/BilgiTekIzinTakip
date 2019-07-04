@@ -6,29 +6,37 @@
 }
 
 <h2>Müdürlük</h2>
+<div class="form-horizontal">
+    <div class="card">
 
-<p>
-    @Bootstrap.LinkButton("/Mudurluk/Create", "primary", "btn btn", "Yeni Ekle", "plus", "Yeni Ekle")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Isim)
-        </th>
-        <th></th>
-    </tr>
+        <div class="card-body">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Isim)
-        </td>
-        <td>
-            @Bootstrap.LinkButton("/Mudurluk/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
-            @Bootstrap.LinkButton("/Mudurluk/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
-            @Bootstrap.LinkButton("/Mudurluk/Delete/" + item.Id, "danger", "btn-sm", "Düzenle", "delete", "Sil")
-        </td>
-    </tr>
-}
+            <p>
+                @Bootstrap.LinkButton("/Mudurluk/Create", "primary", "btn btn", "Yeni Ekle", "plus", "Yeni Ekle")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        <h4>Müdürlükler</h4>
+                    </th>
+                    <th></th>
+                </tr>
 
-</table>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Isim)
+                        </td>
+                        <td>
+                            @Bootstrap.LinkButton("/Mudurluk/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
+                            @Bootstrap.LinkButton("/Mudurluk/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
+                            @Bootstrap.LinkButton("/Mudurluk/Delete/" + item.Id, "danger", "btn-sm", "Düzenle", "delete", "Sil")
+                        </td>
+                    </tr>
+                }
+
+            </table>
+            </div>
+</div>
+</div>

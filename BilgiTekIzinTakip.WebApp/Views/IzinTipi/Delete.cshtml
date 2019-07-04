@@ -1,34 +1,40 @@
 ﻿@model BilgiTekIzinTakip.Entities.IzinTipi
 
 @{
-   
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>İzin Tipi</h2>
 
-<h3>Sil</h3>
-<div>
-    <h4>Bunu silmek istediğinizden emin misiniz?</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.IzinTuru)
-        </dt>
+<div class="card">
 
-        <dd>
-            @Html.DisplayFor(model => model.IzinTuru)
-        </dd>
+    <div class="card-body">
+        <h3>Sil</h3>
+        <div>
+            <h4>Bunu silmek istediğinizden emin misiniz?</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.IzinTuru)
+                </dt>
 
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.IzinTuru)
+                </dd>
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-    <div class="form-actions no-color">
-        @Bootstrap.Button("danger", "btn-secondary", "submit", "delete", "Sil")
+            </dl>
 
-        @Bootstrap.LinkButton("/IzinTipi/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
+        </div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-actions no-color">
+                @Bootstrap.Button("danger", "btn-secondary", "submit", "delete", "Sil")
+
+                @Bootstrap.LinkButton("/IzinTipi/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
+            </div>
+        }
     </div>
-    }
 </div>

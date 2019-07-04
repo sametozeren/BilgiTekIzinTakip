@@ -6,80 +6,104 @@
 }
 
 <h2>Personel</h2>
+<div class="form-horizontal">
+    <div class="card">
 
-<p>
-    @Bootstrap.LinkButton("/Personel/Create", "primary", "btn btn", "Yeni Ekle", "plus", "Yeni Ekle")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.SicilNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ad)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Soyad)
-        </th>
+        <div class="card-body">
+            <p>
+                @Bootstrap.LinkButton("/Personel/Create", "primary", "btn btn", "Yeni Ekle", "plus", "Yeni Ekle")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        <h4>Personeller</h4>
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                
+                    <th></th>
+                </tr>
+                <tr>
 
-        <th>
-            @Html.DisplayNameFor(model => model.Baskanlik.Isim)
-        </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SicilNo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ad)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Soyad)
+                    </th>
 
-        <th>
-            @Html.DisplayNameFor(model => model.Mudurluk.Isim)
-        </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Baskanlik.Isim)
+                    </th>
 
-        <th>
-            @Html.DisplayNameFor(model => model.Seflik.Isim)
-        </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Mudurluk.Isim)
+                    </th>
 
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DahiliNumarasi)
-        </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Seflik.Isim)
+                    </th>
 
-        <th></th>
-    </tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DahiliNumarasi)
+                    </th>
+                    <th></th>
+                    <th></th>
+                </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SicilNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Soyad)
-        </td>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SicilNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ad)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Soyad)
+                        </td>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.Baskanlik.Isim)
-        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Baskanlik.Isim)
+                        </td>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.Mudurluk.Isim)
-        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Mudurluk.Isim)
+                        </td>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.Seflik.Isim)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DahiliNumarasi)
-        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Seflik.Isim)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DahiliNumarasi)
+                        </td>
 
-        <td>
-            @Bootstrap.LinkButton("/Personel/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
-            @Bootstrap.LinkButton("/Personel/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
-            @Bootstrap.LinkButton("/Personel/Delete/" + item.Id, "danger", "btn-sm", "Düzenle", "delete", "Sil")
-        </td>
-    </tr>
-}
+                        <td>
+                            @Bootstrap.LinkButton("/Personel/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
+                            @Bootstrap.LinkButton("/Personel/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
+                            @Bootstrap.LinkButton("/Personel/Delete/" + item.Id, "danger", "btn-sm", "Düzenle", "delete", "Sil")
+                        </td>
+                        <td></td>
+                    </tr>
+                }
 
-</table>
+            </table>
+        </div>
+    </div>
+</div>

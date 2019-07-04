@@ -6,43 +6,61 @@
 
 <h2>İzinler</h2>
 
-<div>
-    <h4>Detaylar</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.BaslangicTarihi)
-        </dt>
+<div class="form-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.BaslangicTarihi)
-        </dd>
+    <div class="card">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BitisTarihi)
-        </dt>
+        <div class="card-body">
+            <h4>Detaylar</h4>
+            <hr />
+            <dl class="dl-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.BitisTarihi)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Personel.Ad)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Personel.Ad)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Personel.Ad)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Personel.Soyad)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Personel.Ad)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.IzinTipi.IzinTuru)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Personel.Soyad)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.IzinTipi.IzinTuru)
-        </dd>
-    </dl>
+                <dt>
+                    @Html.DisplayNameFor(model => model.BaslangicTarihi)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BaslangicTarihi)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BitisTarihi)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BitisTarihi)
+                </dd>
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.IzinTipi.IzinTuru)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IzinTipi.IzinTuru)
+                </dd>
+            </dl>
+
+            <p>
+                @Bootstrap.LinkButton("/Izinler/Edit/" + Model.Id, "warning", "btn btn", "Düzenle", "tooltip-edit", "Düzenle")
+                @Bootstrap.LinkButton("/Izinler/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
+            </p>
+        </div>
+      
+    </div>
 </div>
-<p>
-    @Bootstrap.LinkButton("/Izinler/Edit/" + Model.Id, "warning", "btn btn", "Düzenle", "tooltip-edit", "Düzenle")
-    @Bootstrap.LinkButton("/Izinler/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
-</p>

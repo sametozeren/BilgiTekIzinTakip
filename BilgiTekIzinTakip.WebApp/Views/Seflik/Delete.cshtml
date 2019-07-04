@@ -6,30 +6,35 @@
 }
 
 <h2>Şeflik</h2>
+<div class="card">
 
-<h3>Sil</h3>
-<div>
-    <h4>Bunu silmek istediğinizden emin misiniz?</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            <label class="col-md-3 m-t-15">Şeflik İsmi</label>
-        </dt>
+    <div class="card-body">
+        <h3>Sil</h3>
+        <div>
+            <h4>Bunu silmek istediğinizden emin misiniz?</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Isim)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Isim)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Isim)
+                </dd>
 
-    </dl>
+            </dl>
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
 
-    <div class="form-actions no-color">
-        @Bootstrap.Button("danger", "btn-secondary", "submit", "delete", "Sil")
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        @Bootstrap.LinkButton("/Seflik/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
+            <div class="form-actions no-color">
+                @Bootstrap.Button("danger", "btn-secondary", "submit", "delete", "Sil")
+
+                @Bootstrap.LinkButton("/Seflik/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
+            </div>
+        }
     </div>
-    }
 </div>

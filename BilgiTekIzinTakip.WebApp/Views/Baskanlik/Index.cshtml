@@ -1,34 +1,46 @@
 ﻿@model IEnumerable<BilgiTekIzinTakip.Entities.Baskanlik>
 
 @{
-    
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Başkanlık</h2>
 
-<p>
-    @Bootstrap.LinkButton("/Baskanlik/Create", "primary", "btn btn", "Yeni Ekle", "plus", "Yeni Ekle")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Isim)
-        </th>
-        <th></th>
-    </tr>
+<div class="form-horizontal">
+    <div class="card">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Isim)
-        </td>
-        <td>
-            @Bootstrap.LinkButton("/Baskanlik/Edit/"+ item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
-            @Bootstrap.LinkButton("/Baskanlik/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
-            @Bootstrap.LinkButton("/Baskanlik/Delete/" + item.Id, "danger", "btn-sm", "Sil", "delete", "Sil")
-        </td>
-    </tr>
-}
+        <div class="card-body">
+            <p>
+                @Bootstrap.LinkButton("/Baskanlik/Create", "primary", "btn btn", "Yeni Ekle", "plus", "Yeni Ekle")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        <h4>Başkanlıklar</h4>
+                    </th>
+                    <th></th>
+                </tr>
 
-</table>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Isim)
+                        </td>
+                        <td>
+                            @Bootstrap.LinkButton("/Baskanlik/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
+                            @Bootstrap.LinkButton("/Baskanlik/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
+                            @Bootstrap.LinkButton("/Baskanlik/Delete/" + item.Id, "danger", "btn-sm", "Sil", "delete", "Sil")
+                        </td>
+                    </tr>
+
+
+                }
+
+            </table>
+
+        </div>
+    </div>
+    </div>
+
