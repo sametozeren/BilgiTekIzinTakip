@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Helpers;
 
 namespace BilgiTekIzinTakip.BusinessLayer
 {
@@ -18,7 +19,7 @@ namespace BilgiTekIzinTakip.BusinessLayer
             // Giriş kontrolü
             // Hesap aktive edilmiş mi?
             BusinessLayerResult<Personel> res = new BusinessLayerResult<Personel>();
-            res.Result = Find(x => x.KullaniciAdi == data.Username && x.Sifre == data.Password);
+            res.Result = Find(x => x.KullaniciAdi == data.Username);
 
             if (res.Result != null)
             {
@@ -26,10 +27,18 @@ namespace BilgiTekIzinTakip.BusinessLayer
                 {
                     res.AddError(ErrorMessageCode.UserIsNotAdmin, "Kullanıcı yönetici yetkisine sahip değildir.");
                 }
+                else
+                {
+                    bool verify = Crypto.VerifyHashedPassword(res.Result.Sifre, data.Password);
+                    if (!verify)
+                    {
+                        res.AddError(ErrorMessageCode.PasswordWrong,"Şifrenizi Hatalı Girdiniz");
+                    }
+                }
             }
             else
             {
-                res.AddError(ErrorMessageCode.UsernameOrPassWrong, "Kullanıcı adı yada şifre uyuşmuyor.");
+                res.AddError(ErrorMessageCode.UsernameWrong, "Böyle Bir Kullanıcı Yok veya Kullanıcı Adınızı Hatalı Girdiniz.");
             }
 
             return res;

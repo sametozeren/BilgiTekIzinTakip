@@ -15,6 +15,9 @@
         <th>
             @Html.DisplayNameFor(model => model.IzinTuru)
         </th>
+        <td>
+            @Html.DisplayNameFor(model=>model.RenkKodu)
+        </td>
         <th></th>
     </tr>
 
@@ -22,6 +25,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.IzinTuru)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem=>item.RenkKodu)
         </td>
         <td>
             @Bootstrap.LinkButton("/IzinTipi/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace BilgiTekIzinTakip.WebApp.Controllers
@@ -26,7 +27,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         }
         [HttpPost]
         public ActionResult Login(LoginViewModel model)
-        {
+        {            
             if (ModelState.IsValid)
             {
                 BusinessLayerResult<Personel> res = personelManager.LoginUser(model);

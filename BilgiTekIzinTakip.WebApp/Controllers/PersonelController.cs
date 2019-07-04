@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using BilgiTekIzinTakip.BusinessLayer;
 using BilgiTekIzinTakip.Entities;
@@ -58,6 +59,8 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Personel personel)
         {
+            string hashPassword = Crypto.HashPassword(personel.Sifre);
+            personel.Sifre = hashPassword;
             if (ModelState.IsValid)
             {
                 db.Insert(personel);
