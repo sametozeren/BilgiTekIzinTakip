@@ -77,6 +77,8 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.BaskanlikId = new SelectList(baskanlikManager.List(), "Id", "Isim");
+            ViewBag.MudurlukId = new SelectList(mudurlukManager.List(), "Id","Isim");
             return View(seflik);
         }
 
@@ -87,9 +89,19 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Seflik seflik)
         {
+            ModelState.Remove("ModifiedUsername");
+            ModelState.Remove("CreatedOn");
+            ModelState.Remove("Baskanlik.Isim");
+            ModelState.Remove("Baskanlik.ModifiedUsername");
+            ModelState.Remove("Mudurluk.Isim");
+            ModelState.Remove("Mudurluk.ModifiedUsername");
             if (ModelState.IsValid)
             {
-                seflikManager.Update(seflik);
+                Seflik sef = seflikManager.Find(x => x.Id == seflik.Id);
+                sef.Isim = seflik.Isim;
+                sef.BaskanlikId = seflik.Baskanlik.Id;
+                sef.MudurlukId = seflik.Mudurluk.Id;
+                seflikManager.Update(sef);
                 return RedirectToAction("Index");
             }
             return View(seflik);

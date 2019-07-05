@@ -21,7 +21,20 @@
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.Id)
-
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Baskanlik.Isim, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(x => x.Baskanlik.Id, (IEnumerable<SelectListItem>)ViewBag.BaskanlikId, null, htmlAttributes: new { @class = "control-label col-md-12", @id = "BaskanlikId" })
+                        @Html.ValidationMessageFor(model => model.Baskanlik.Isim, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Mudurluk.Isim, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(x => x.Mudurluk.Id, (IEnumerable<SelectListItem>)ViewBag.MudurlukId, null, htmlAttributes: new { @class = "control-label col-md-12", @id = "MudurlukId" })
+                        @Html.ValidationMessageFor(model => model.Mudurluk.Isim, "", new { @class = "text-danger" })
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="col-md-3 m-t-15">Şeflik İsmi</label>
                     <div class="col-md-10">
