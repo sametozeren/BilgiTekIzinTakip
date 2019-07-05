@@ -1060,17 +1060,14 @@
     <Content Include="Views\IzinTipi\Edit.cshtml" />
     <Content Include="Views\IzinTipi\Index.cshtml" />
     <Content Include="Views\Baskanlik\Create.cshtml" />
-    <Content Include="Views\Baskanlik\Delete.cshtml" />
     <Content Include="Views\Baskanlik\Details.cshtml" />
     <Content Include="Views\Baskanlik\Edit.cshtml" />
     <Content Include="Views\Baskanlik\Index.cshtml" />
     <Content Include="Views\Mudurluk\Create.cshtml" />
-    <Content Include="Views\Mudurluk\Delete.cshtml" />
     <Content Include="Views\Mudurluk\Details.cshtml" />
     <Content Include="Views\Mudurluk\Edit.cshtml" />
     <Content Include="Views\Mudurluk\Index.cshtml" />
     <Content Include="Views\Seflik\Create.cshtml" />
-    <Content Include="Views\Seflik\Delete.cshtml" />
     <Content Include="Views\Seflik\Details.cshtml" />
     <Content Include="Views\Seflik\Edit.cshtml" />
     <Content Include="Views\Seflik\Index.cshtml" />

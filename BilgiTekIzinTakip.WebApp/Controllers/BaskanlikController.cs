@@ -97,36 +97,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             }
             return View(baskanlik);
         }
-
-        // GET: Baskanlik/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Baskanlik baskanlik = baskanlikManager.Find(x => x.Id == id);
-
-            if (baskanlik == null)
-            {
-                return HttpNotFound();
-            }
-            return View(baskanlik);
-        }
-
-        // POST: Baskanlik/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Baskanlik baskanlik = baskanlikManager.Find(x => x.Id == id);
-            if (baskanlik != null)
-            {
-                baskanlikManager.Delete(baskanlik);
-            }
-            return RedirectToAction("Index");
-        }
-
+        
        
     }
 }

@@ -101,32 +101,6 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             return View(mudurluk);
         }
 
-        // GET: Mudurluk/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Mudurluk mudurluk = mudurlukManager.Find(x=>x.Id==id);
-            if (mudurluk == null)
-            {
-                return HttpNotFound();
-            }
-            return View(mudurluk);
-        }
-
-        // POST: Mudurluk/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-           Mudurluk mudurluk = mudurlukManager.Find(x => x.Id == id);
-            if (mudurluk != null)
-            {
-                mudurlukManager.Delete(mudurluk);
-            }
-            return RedirectToAction("Index");
-        }
+      
     }
 }

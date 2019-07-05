@@ -107,33 +107,6 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             return View(seflik);
         }
 
-        // GET: Seflik/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Seflik seflik = seflikManager.Find(x => x.Id == id);
-            if (seflik == null)
-            {
-                return HttpNotFound();
-            }
-            return View(seflik);
-        }
-
-        // POST: Seflik/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Seflik seflik = seflikManager.Find(x => x.Id == id);
-
-            if (seflik != null)
-            {
-                seflikManager.Delete(seflik);
-            }
-            return RedirectToAction("Index");
-        }
+      
     }
 }
