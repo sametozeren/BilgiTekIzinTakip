@@ -15,7 +15,7 @@ namespace BilgiTekIzinTakip.Entities
     {
         [DisplayName("Müdürlük İsmi"), StringLength(50, ErrorMessage = "{0} alanı max. {1} karakter olmalıdır."), Required(ErrorMessage = "{0} alanı gereklidir.")]
         public string Isim { get; set; }
-        public int BaskanlikId { get; set; }
+        public int? BaskanlikId { get; set; }
         public virtual Baskanlik Baskanlik { get; set; }
         public virtual List<Seflik> Seflik { get; set; }
         public virtual List<Personel> Personel { get; set; }

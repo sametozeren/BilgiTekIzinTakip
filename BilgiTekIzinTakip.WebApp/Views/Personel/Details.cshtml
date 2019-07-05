@@ -81,12 +81,18 @@
                 <dd>
                     @Html.DisplayFor(model => model.DahiliNumarasi)
                 </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsAdmin)
+                </dt>
 
+                <dd>
+                    @Html.DisplayFor(model => model.IsAdmin)
+                </dd>
 
             </dl>
             <p>
-                @Bootstrap.LinkButton("/Personel/Edit/" + Model.Id, "warning", "btn btn", "Düzenle", "tooltip-edit", "Düzenle")
-                @Bootstrap.LinkButton("/Personel/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
+                @Bootstrap.LinkButton("/Personel/Edit/" + Model.Id, "warning", null, "Düzenle", "tooltip-edit", "Düzenle")
+                @Bootstrap.LinkButton("/Personel/Index", "secondary", null, "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
             </p>
 
         </div>

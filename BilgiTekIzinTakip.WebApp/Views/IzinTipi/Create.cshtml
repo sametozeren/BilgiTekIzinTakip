@@ -38,15 +38,15 @@
 
                 <div class="col-md-4">
 
-                    @Html.ValidationMessageFor(model => model.RenkKodu, "", new { @class = "text-danger" })
-                    <input type="text" id="hue-demo" class="form-control demo" data-control="hue" value="#ff6161">
+                    @Html.TextBoxFor(model=>model.RenkKodu)
+                    <input type="text" id="RenkKodu" class="form-control demo" data-control="hue" value="#ff6161">
                 </div>
 
             </div>
 
             <div class="form-group row">
                 <div class="col-md-2 m-t-15">
-                    <button type="button" class="btn btn-success">Ekle</button>
+                    <button type="submit" class="btn btn-success">Ekle</button>
                 </div>
             </div>
             <div>

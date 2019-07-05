@@ -15,7 +15,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
 {
     public class PersonelController : Controller
     {
-        private PersonelManager db = new PersonelManager();
+        private PersonelManager personelManager = new PersonelManager();
         private BaskanlikManager baskanlikManager = new BaskanlikManager();
         private MudurlukManager mudurlukManager = new MudurlukManager();
         private SeflikManager seflikManager = new SeflikManager();
@@ -24,7 +24,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         // GET: Personel
         public ActionResult Index()
         {
-            return View(db.List());
+            return View(personelManager.List());
         }
 
         // GET: Personel/Details/5
@@ -34,7 +34,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Personel personel = db.Find(x => x.Id == id);
+            Personel personel = personelManager.Find(x => x.Id == id);
             if (personel == null)
             {
                 return HttpNotFound();
@@ -65,7 +65,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             ModelState.Remove("Sifre");
             if (ModelState.IsValid)
             {
-                db.Insert(personel);
+                personelManager.Insert(personel);
                 return RedirectToAction("Index");
             }
 
@@ -79,12 +79,11 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Personel personel = db.Find(x => x.Id == id);
+            Personel personel = personelManager.Find(x => x.Id == id);
             if (personel == null)
             {
                 return HttpNotFound();
             }
-
 
             ViewBag.BaskanlikId = new SelectList(baskanlikManager.List(), "Id", "Isim");
             ViewBag.MudurlukId = new SelectList(mudurlukManager.List(), "Id", "Isim");
@@ -103,9 +102,31 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             ModelState.Remove("CreatedOn");
             ModelState.Remove("KullaniciAdi");
             ModelState.Remove("Sifre");
+            ModelState.Remove("Baskanlik.Isim");
+            ModelState.Remove("Mudurluk.Isim");
+            ModelState.Remove("Seflik.Isim");
+            ModelState.Remove("Baskanlik.ModifiedUsername");
+            ModelState.Remove("Mudurluk.ModifiedUsername");
+            ModelState.Remove("Seflik.ModifiedUsername");
             if (ModelState.IsValid)
             {
-                db.Update(personel);
+                Personel per = personelManager.Find(x=>x.Id==personel.Id);
+                if (per!=null)
+                {
+                    string hash = Crypto.HashPassword(personel.Sifre);
+                    per.Sifre = hash;
+                    per.SicilNo = personel.SicilNo;
+                    per.Ad = personel.Ad;
+                    per.Soyad = personel.Soyad;
+                    per.MudurlukId = personel.Mudurluk.Id;
+                    per.BaskanlikId = personel.Baskanlik.Id;
+                    per.SeflikId = personel.Seflik.Id;
+                    per.Email = personel.Email;
+                    per.DahiliNumarasi = personel.DahiliNumarasi;
+                    per.KullaniciAdi = personel.KullaniciAdi;
+                    per.IsAdmin = personel.IsAdmin;
+                }
+                personelManager.Update(per);
                 return RedirectToAction("Index");
             }
             return View(personel);
@@ -118,7 +139,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Personel personel = db.Find(x => x.Id == id);
+            Personel personel = personelManager.Find(x => x.Id == id);
             if (personel == null)
             {
                 return HttpNotFound();
@@ -131,11 +152,11 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Personel personel = db.Find(x => x.Id == id);
+            Personel personel = personelManager.Find(x => x.Id == id);
 
             if (personel != null)
             {
-                db.Delete(personel);
+                personelManager.Delete(personel);
             }
             return RedirectToAction("Index");
         }
