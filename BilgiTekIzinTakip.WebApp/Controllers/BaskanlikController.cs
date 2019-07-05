@@ -14,12 +14,12 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
 {
     public class BaskanlikController : Controller
     {
-        private BaskanlikManager db = new BaskanlikManager();
+        private BaskanlikManager baskanlikManager = new BaskanlikManager();
 
         // GET: Baskanlik
         public ActionResult Index()
         {
-            return View(db.List());
+            return View(baskanlikManager.List());
         }
 
         // GET: Baskanlik/Details/5
@@ -29,7 +29,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Baskanlik baskanlik = db.Find(x => x.Id == id);
+            Baskanlik baskanlik = baskanlikManager.Find(x => x.Id == id);
 
             if (baskanlik == null)
             {
@@ -55,7 +55,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             ModelState.Remove("CreatedOn");
             if (ModelState.IsValid)
             {
-                db.Insert(baskanlik);
+                baskanlikManager.Insert(baskanlik);
                 return RedirectToAction("Index");
             }
 
@@ -69,7 +69,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Baskanlik baskanlik = db.Find(x => x.Id == id);
+            Baskanlik baskanlik = baskanlikManager.Find(x => x.Id == id);
 
             if (baskanlik == null)
             {
@@ -89,7 +89,10 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             ModelState.Remove("CreatedOn");
             if (ModelState.IsValid)
             {
-                db.Update(baskanlik);
+                Baskanlik bas = baskanlikManager.Find(x => x.Id == baskanlik.Id);
+                bas.Isim = baskanlik.Isim;
+
+                baskanlikManager.Update(bas);
                 return RedirectToAction("Index");
             }
             return View(baskanlik);
@@ -102,7 +105,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Baskanlik baskanlik = db.Find(x => x.Id == id);
+            Baskanlik baskanlik = baskanlikManager.Find(x => x.Id == id);
 
             if (baskanlik == null)
             {
@@ -116,10 +119,10 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Baskanlik baskanlik = db.Find(x => x.Id == id);
+            Baskanlik baskanlik = baskanlikManager.Find(x => x.Id == id);
             if (baskanlik != null)
             {
-                db.Delete(baskanlik);
+                baskanlikManager.Delete(baskanlik);
             }
             return RedirectToAction("Index");
         }

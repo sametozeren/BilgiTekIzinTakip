@@ -14,12 +14,12 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
 {
     public class MudurlukController : Controller
     {
-        private MudurlukManager db = new MudurlukManager();
+        private MudurlukManager mudurlukManager = new MudurlukManager();
         private BaskanlikManager baskanlikManager = new BaskanlikManager();
         // GET: Mudurluk
         public ActionResult Index()
         {
-            return View(db.List());
+            return View(mudurlukManager.List());
         }
 
         // GET: Mudurluk/Details/5
@@ -29,7 +29,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Mudurluk mudurluk = db.Find(x => x.Id == id);
+            Mudurluk mudurluk = mudurlukManager.Find(x => x.Id == id);
             if (mudurluk == null)
             {
                 return HttpNotFound();
@@ -41,7 +41,6 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         public ActionResult Create()
         {
             ViewBag.BaskanlikId = new SelectList(baskanlikManager.List(),"Id","Isim");
-
             return View();
         }
 
@@ -56,7 +55,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             ModelState.Remove("CreatedOn");
             if (ModelState.IsValid)
             {
-                db.Insert(mudurluk);
+                mudurlukManager.Insert(mudurluk);
                 return RedirectToAction("Index");
             }
 
@@ -70,11 +69,12 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Mudurluk mudurluk = db.Find(x => x.Id == id);
+            Mudurluk mudurluk = mudurlukManager.Find(x => x.Id == id);
             if (mudurluk == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.BaskanlikId = new SelectList(baskanlikManager.List(), "Id", "Isim"); ;
             return View(mudurluk);
         }
 
@@ -87,10 +87,16 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         {
             ModelState.Remove("ModifiedUsername");
             ModelState.Remove("CreatedOn");
+            ModelState.Remove("Baskanlik.Isim");
+            ModelState.Remove("Baskanlik.ModifiedUsername");
             if (ModelState.IsValid)
             {
-                db.Update(mudurluk);
+                Mudurluk mud = mudurlukManager.Find(x => x.Id == mudurluk.Id);
+                mud.Isim = mudurluk.Isim;
+                mud.BaskanlikId = mudurluk.Baskanlik.Id;
+                mudurlukManager.Update(mud);
                 return RedirectToAction("Index");
+
             }
             return View(mudurluk);
         }
@@ -102,7 +108,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Mudurluk mudurluk = db.Find(x=>x.Id==id);
+            Mudurluk mudurluk = mudurlukManager.Find(x=>x.Id==id);
             if (mudurluk == null)
             {
                 return HttpNotFound();
@@ -115,10 +121,10 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-           Mudurluk mudurluk = db.Find(x => x.Id == id);
+           Mudurluk mudurluk = mudurlukManager.Find(x => x.Id == id);
             if (mudurluk != null)
             {
-                db.Delete(mudurluk);
+                mudurlukManager.Delete(mudurluk);
             }
             return RedirectToAction("Index");
         }

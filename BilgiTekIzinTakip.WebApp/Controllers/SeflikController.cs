@@ -14,14 +14,14 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
 {
     public class SeflikController : Controller
     {
-        private SeflikManager db = new SeflikManager();
+        private SeflikManager seflikManager = new SeflikManager();
         private BaskanlikManager baskanlikManager = new BaskanlikManager();
         private MudurlukManager mudurlukManager = new MudurlukManager();
 
         // GET: Seflik
         public ActionResult Index()
         {
-            return View(db.List());
+            return View(seflikManager.List());
         }
 
         // GET: Seflik/Details/5
@@ -31,7 +31,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Seflik seflik = db.Find(x => x.Id == id);
+            Seflik seflik = seflikManager.Find(x => x.Id == id);
             if (seflik == null)
             {
                 return HttpNotFound();
@@ -58,7 +58,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             ModelState.Remove("CreatedOn");
             if (ModelState.IsValid)
             {
-                db.Insert(seflik);
+                seflikManager.Insert(seflik);
                 return RedirectToAction("Index");
             }
 
@@ -72,7 +72,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Seflik seflik = db.Find(x => x.Id == id);
+            Seflik seflik = seflikManager.Find(x => x.Id == id);
             if (seflik == null)
             {
                 return HttpNotFound();
@@ -89,7 +89,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Update(seflik);
+                seflikManager.Update(seflik);
                 return RedirectToAction("Index");
             }
             return View(seflik);
@@ -102,7 +102,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Seflik seflik = db.Find(x => x.Id == id);
+            Seflik seflik = seflikManager.Find(x => x.Id == id);
             if (seflik == null)
             {
                 return HttpNotFound();
@@ -115,11 +115,11 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Seflik seflik = db.Find(x => x.Id == id);
+            Seflik seflik = seflikManager.Find(x => x.Id == id);
 
             if (seflik != null)
             {
-                db.Delete(seflik);
+                seflikManager.Delete(seflik);
             }
             return RedirectToAction("Index");
         }
