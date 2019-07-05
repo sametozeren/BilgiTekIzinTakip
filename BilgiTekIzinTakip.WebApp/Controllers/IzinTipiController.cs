@@ -14,12 +14,12 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
 {
     public class IzinTipiController : Controller
     {
-       private IzinTipiManager db = new IzinTipiManager();
+        private IzinTipiManager IzinTipiManager = new IzinTipiManager();
 
         // GET: IzinTipi
         public ActionResult Index()
         {
-            return View(db.List());
+            return View(IzinTipiManager.List());
         }
 
         // GET: IzinTipi/Details/5
@@ -29,7 +29,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            IzinTipi izinTipi = db.Find(x => x.Id == id);
+            IzinTipi izinTipi = IzinTipiManager.Find(x => x.Id == id);
             if (izinTipi == null)
             {
                 return HttpNotFound();
@@ -50,9 +50,10 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(IzinTipi izinTipi)
         {
+            ModelState.Remove("ModifiedUsername");
             if (ModelState.IsValid)
             {
-                db.Insert(izinTipi);
+                IzinTipiManager.Insert(izinTipi);
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +67,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            IzinTipi izinTipi = db.Find(x => x.Id == id);
+            IzinTipi izinTipi = IzinTipiManager.Find(x => x.Id == id);
             if (izinTipi == null)
             {
                 return HttpNotFound();
@@ -81,42 +82,16 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(IzinTipi izinTipi)
         {
+            ModelState.Remove("ModifiedUsername");
             if (ModelState.IsValid)
             {
-                db.Update(izinTipi);
+                IzinTipi tip = IzinTipiManager.Find(x=>x.Id==izinTipi.Id);
+                tip.IzinTuru = izinTipi.IzinTuru;
+                tip.RenkKodu = izinTipi.RenkKodu;
+                IzinTipiManager.Update(tip);
                 return RedirectToAction("Index");
             }
             return View(izinTipi);
         }
-
-        // GET: IzinTipi/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            IzinTipi izinTipi = db.Find(x => x.Id == id);
-            if (izinTipi == null)
-            {
-                return HttpNotFound();
-            }
-            return View(izinTipi);
-        }
-
-        // POST: IzinTipi/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            IzinTipi izinTipi = db.Find(x => x.Id == id);
-            if (izinTipi != null)
-            {
-                db.Delete(izinTipi);
-            }
-            return RedirectToAction("Index");
-        }
-
-        
     }
 }

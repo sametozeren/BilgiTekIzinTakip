@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>İzinler</h2>
+<h2>@ViewBag.Title</h2>
 <div class="form-horizontal">
     <div class="card">
 
@@ -13,47 +13,74 @@
             <p>
                 @Bootstrap.LinkButton("/Izinler/Create", "primary", "btn btn", "Yeni Ekle", "plus", "Yeni Ekle")
             </p>
-            <table class="table">
-                <tr>
-                    <th>
+            <div class="table-responsive">
+                <table id="zero_config" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Personel.Ad)</th>
+                            <th>@Html.DisplayNameFor(model => model.Personel.Soyad)</th>
+                            <th>@Html.DisplayNameFor(model => model.Personel.Baskanlik.Isim)</th>
+                            <th>@Html.DisplayNameFor(model => model.Personel.Mudurluk.Isim)</th>
+                            <th>@Html.DisplayNameFor(model => model.Personel.Seflik.Isim)</th>
+                            <th>@Html.DisplayNameFor(model => model.BaslangicTarihi)</th>
+                            <th>@Html.DisplayNameFor(model => model.BitisTarihi)</th>
+                            <th>@Html.DisplayNameFor(model => model.IzinTipi.IzinTuru)</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Personel.Ad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Personel.Soyad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Personel.Baskanlik.Isim)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Personel.Mudurluk.Isim)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Personel.Seflik.Isim)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BaslangicTarihi)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BitisTarihi)
+                            </td>
 
-                        @Html.DisplayNameFor(model => model.BaslangicTarihi)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.BitisTarihi)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Personel.Ad)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.IzinTipi.IzinTuru)
-                    </th>
-                    <th></th>
-                </tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IzinTipi.IzinTuru)
+                            </td>
+                            <td style="width:250px;">
+                                @Bootstrap.LinkButton("/Izinler/Edit/" + item.Id, "cyan", "btn-xs", "Düzenle", "tooltip-edit", "Düzenle")
+                                @Bootstrap.LinkButton("/Izinler/Details/" + item.Id, "success", "btn-xs", "Detay", "details", "Detay")
+                                @Bootstrap.LinkButton("/Izinler/Delete/" + item.Id, "danger", "btn-xs", "Düzenle" ,"delete", "Sil")
+                            </td>
+                        </tr>
+                        }
 
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.BaslangicTarihi)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.BitisTarihi)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Personel.Ad)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.IzinTipi.IzinTuru)
-                        </td>
-                        <td>
-                            @Bootstrap.LinkButton("/Izinler/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
-                            @Bootstrap.LinkButton("/Izinler/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
-                            @Bootstrap.LinkButton("/Izinler/Delete/" + item.Id, "danger", "btn-sm", "Düzenle", "delete", "Sil")
-                        </td>
-                    </tr>
-                }
-            </table>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Personel.Ad)</th>
+                            <th>@Html.DisplayNameFor(model => model.Personel.Soyad)</th>
+                            <th>@Html.DisplayNameFor(model => model.Personel.Baskanlik.Isim)</th>
+                            <th>@Html.DisplayNameFor(model => model.Personel.Mudurluk.Isim)</th>
+                            <th>@Html.DisplayNameFor(model => model.Personel.Seflik.Isim)</th>
+                            <th>@Html.DisplayNameFor(model => model.BaslangicTarihi)</th>
+                            <th>@Html.DisplayNameFor(model => model.BitisTarihi)</th>
+                            <th>@Html.DisplayNameFor(model => model.IzinTipi.IzinTuru)</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
     </div>
 </div>

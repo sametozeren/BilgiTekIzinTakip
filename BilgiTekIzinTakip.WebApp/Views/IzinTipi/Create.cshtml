@@ -24,8 +24,7 @@
 
                 <label class="col-md-2 m-t-15">İzin Türü</label>
                 <div class="col-md-4">
-                    @Html.EditorFor(model => model.IzinTuru, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.IzinTuru, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.IzinTuru, new { htmlAttributes = new { @class = "form-control m-t-15" } })
                 </div>
             </div>
 
@@ -38,8 +37,7 @@
 
                 <div class="col-md-4">
 
-                    @Html.TextBoxFor(model=>model.RenkKodu)
-                    <input type="text" id="RenkKodu" class="form-control demo" data-control="hue" value="#ff6161">
+                    @Html.EditorFor(model => model.RenkKodu, new { htmlAttributes = new { @class = "form-control demo",@id="RenkKodu" } })
                 </div>
 
             </div>

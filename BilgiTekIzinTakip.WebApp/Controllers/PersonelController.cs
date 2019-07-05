@@ -113,8 +113,11 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
                 Personel per = personelManager.Find(x=>x.Id==personel.Id);
                 if (per!=null)
                 {
-                    string hash = Crypto.HashPassword(personel.Sifre);
-                    per.Sifre = hash;
+                    if (personel.Sifre!=null)
+                    {
+                        string hash = Crypto.HashPassword(personel.Sifre);
+                        per.Sifre = hash;
+                    }
                     per.SicilNo = personel.SicilNo;
                     per.Ad = personel.Ad;
                     per.Soyad = personel.Soyad;

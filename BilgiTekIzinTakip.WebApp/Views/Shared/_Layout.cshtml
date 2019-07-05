@@ -12,9 +12,11 @@
     <link href="~/Content/assets/extra-libs/calendar/calendar.css" rel="stylesheet" />
     <link href="~/Content/assets/libs/flot/css/float-chart.css" rel="stylesheet">
     <link href="~/Content/dist/css/style.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="~/Content/assets/libs/jquery-minicolors/jquery.minicolors.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/extra-libs/multicheck/multicheck.css">
 
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/libs/jquery-minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/build/css/bootstrap-datetimepicker.min.css">
 
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -38,7 +40,6 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">@ViewBag.Title</h4>
                     </div>
                 </div>
             </div>
@@ -53,7 +54,13 @@
     </div>
 
     <script src="~/Content/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js" type="text/javascript"></script>
 
+
+
+    <script src="~/Content/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
+    <script src="~/Content/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+    <script src="~/Content/assets/extra-libs/DataTables/datatables.min.js"></script>
     <script src="~/Content/assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="~/Content/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="~/Content/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
@@ -62,7 +69,6 @@
     <script src="~/Content/dist/js/sidebarmenu.js"></script>
     <script src="~/Content/dist/js/custom.min.js"></script>
     <script src="~/Content/assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
-    <script src="~/Content/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="~/Content/assets/libs/flot/excanvas.js"></script>
     <script src="~/Content/assets/libs/flot/jquery.flot.js"></script>
     <script src="~/Content/assets/libs/flot/jquery.flot.pie.js"></script>
@@ -71,8 +77,10 @@
     <script src="~/Content/assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="~/Content/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="~/Content/dist/js/pages/chart/chart-page-init.js"></script>
-    <script src="~/Content/assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
-    <script src="~/Content/dist/js/pages/calendar/cal-init.js"></script>
+    <script src="~/Content/build/js/bootstrap-datetimepicker.min.js"></script>
+    @*<script src="~/Content/assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
+        <script src="~/Content/dist/js/pages/calendar/cal-init.js"></script>*@
+
     <script>
         $('.demo').each(function () {
             //
@@ -100,13 +108,10 @@
 
         });
 
-        jQuery('.mydatepicker').datepicker();
-        jQuery('#datepicker-autoclose').datepicker({
-            autoclose: true,
-            todayHighlight: true
-        });
-        var quill = new Quill('#editor', {
-            theme: 'snow'
+        $('#zero_config').DataTable();
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+            $('#datetimepicker2').datetimepicker();
         });
     </script>
 

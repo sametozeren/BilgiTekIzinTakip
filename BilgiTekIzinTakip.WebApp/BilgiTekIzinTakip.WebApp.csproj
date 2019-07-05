@@ -789,6 +789,9 @@
     <Content Include="Content\assets\libs\toastr\build\toastr.min.js" />
     <Content Include="Content\assets\libs\toastr\toastr-icon.png" />
     <Content Include="Content\assets\libs\toastr\toastr.js" />
+    <Content Include="Content\build\css\bootstrap-datetimepicker.css" />
+    <Content Include="Content\build\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\build\js\bootstrap-datetimepicker.min.js" />
     <Content Include="Content\dist\css\icons\font-awesome\css\fa-brands.css" />
     <Content Include="Content\dist\css\icons\font-awesome\css\fa-brands.min.css" />
     <Content Include="Content\dist\css\icons\font-awesome\css\fa-regular.css" />
@@ -1055,7 +1058,6 @@
     <Content Include="Views\Izinler\Edit.cshtml" />
     <Content Include="Views\Izinler\Index.cshtml" />
     <Content Include="Views\IzinTipi\Create.cshtml" />
-    <Content Include="Views\IzinTipi\Delete.cshtml" />
     <Content Include="Views\IzinTipi\Details.cshtml" />
     <Content Include="Views\IzinTipi\Edit.cshtml" />
     <Content Include="Views\IzinTipi\Index.cshtml" />

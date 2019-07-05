@@ -16,6 +16,12 @@
             <table class="table">
                 <tr>
                     <th>
+                        <h4>Başkanlık</h4>
+                    </th>
+                    <th>
+                        <h4>Müdürlük</h4>
+                    </th>
+                    <th>
                         <h4>Şeflikler</h4>
                     </th>
                     <th></th>
@@ -23,16 +29,22 @@
 
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Isim)
-                        </td>
-                        <td>
-                            @Bootstrap.LinkButton("/Seflik/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
-                            @Bootstrap.LinkButton("/Seflik/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
-                        
-                        </td>
-                    </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Baskanlik.Isim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mudurluk.Isim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Isim)
+                </td>
+                <td>
+                    @Bootstrap.LinkButton("/Seflik/Edit/" + item.Id, "cyan", "btn-sm", "Düzenle", "tooltip-edit", "Düzenle")
+                    @Bootstrap.LinkButton("/Seflik/Details/" + item.Id, "success", "btn-sm", "Detay", "details", "Detay")
+
+                </td>
+            </tr>
                 }
 
             </table>

@@ -22,11 +22,18 @@
                 <dd>
                     @Html.DisplayFor(model => model.IzinTuru)
                 </dd>
+                <dt>
+                @Html.DisplayNameFor(model => model.RenkKodu)
+                </dt>
+
+                <dd>
+                    <div style="width:10px; height:10px; background-color:@Model.RenkKodu"></div>@Html.DisplayFor(model => model.RenkKodu)
+                </dd>
 
             </dl>
             <p>
-                @Bootstrap.LinkButton("/Baskanlik/Edit/" + Model.Id, "warning", "btn btn", "Düzenle", "tooltip-edit", "Düzenle")
-                @Bootstrap.LinkButton("/Baskanlik/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
+                @Bootstrap.LinkButton("/IzinTipi/Edit/" + Model.Id, "warning", "btn btn", "Düzenle", "tooltip-edit", "Düzenle")
+                @Bootstrap.LinkButton("/IzinTipi/Index", "secondary", "btn btn", "Listeye geri dön", "keyboard-backspace", "Listeye geri dön")
             </p>
         </div>
        

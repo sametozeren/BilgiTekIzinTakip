@@ -14,12 +14,13 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
 {
     public class IzinlerController : Controller
     {
-        private IzinlerManager db = new IzinlerManager();
+        private IzinlerManager ızinlerManager = new IzinlerManager();
+        private IzinTipiManager izinTipiManager = new IzinTipiManager();
 
         // GET: Izinler
         public ActionResult Index()
         {
-            return View(db.List());
+            return View(ızinlerManager.List());
         }
 
         // GET: Izinler/Details/5
@@ -29,7 +30,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Izinler izinler = db.Find(x => x.Id == id);
+            Izinler izinler = ızinlerManager.Find(x => x.Id == id);
             if (izinler == null)
             {
                 return HttpNotFound();
@@ -40,6 +41,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         // GET: Izinler/Create
         public ActionResult Create()
         {
+            ViewBag.IzinTuru = new SelectList(izinTipiManager.List(), "Id","IzinTuru");
             return View();
         }
 
@@ -50,9 +52,10 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Izinler izinler)
         {
+        
             if (ModelState.IsValid)
             {
-                db.Insert(izinler);
+                ızinlerManager.Insert(izinler);
                 return RedirectToAction("Index");
             }
 
@@ -66,11 +69,13 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Izinler izinler = db.Find(x => x.Id == id);
+            Izinler izinler = ızinlerManager.Find(x => x.Id == id);
             if (izinler == null)
             {
                 return HttpNotFound();
             }
+
+            ViewBag.IzinTuru = new SelectList(izinTipiManager.List(), "Id","IzinTuru");
             return View(izinler);
         }
 
@@ -83,7 +88,8 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Update(izinler);
+
+                ızinlerManager.Update(izinler);
                 return RedirectToAction("Index");
             }
             return View(izinler);
@@ -96,7 +102,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Izinler izinler = db.Find(x => x.Id == id);
+            Izinler izinler = ızinlerManager.Find(x => x.Id == id);
             if (izinler == null)
             {
                 return HttpNotFound();
@@ -109,10 +115,10 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Izinler izinler = db.Find(x => x.Id == id);
+            Izinler izinler = ızinlerManager.Find(x => x.Id == id);
             if (izinler!=null)
             {
-                db.Delete(izinler);
+                ızinlerManager.Delete(izinler);
             }
             return RedirectToAction("Index");
         }

@@ -34,7 +34,7 @@ namespace BilgiTekIzinTakip.DataAccessLayer.EntityFramework
             IzinTipi tip = new IzinTipi()
             {
                 IzinTuru = "Günlük",
-                RenkKodu = "success",
+                RenkKodu = "#000",
                 CreatedOn = DateTime.Now.AddHours(1),
                 ModifiedOn = DateTime.Now.AddMinutes(65),
                 ModifiedUsername = "nuray",
@@ -44,7 +44,7 @@ namespace BilgiTekIzinTakip.DataAccessLayer.EntityFramework
             IzinTipi tip2 = new IzinTipi()
             {
                 IzinTuru = "Saatlik",
-                RenkKodu = "danger",
+                RenkKodu = "#000",
                 CreatedOn = DateTime.Now.AddHours(1),
                 ModifiedOn = DateTime.Now.AddMinutes(65),
                 ModifiedUsername = "nuray",
