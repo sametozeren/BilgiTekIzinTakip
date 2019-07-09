@@ -846,8 +846,16 @@
     <Content Include="Content\dist\js\pages\sparkline\jquery.charts-sparkline.js" />
     <Content Include="Content\dist\js\sidebarmenu.js" />
     <Content Include="Content\dist\js\waves.js" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\jquery-ui.min.js" />
+    <Content Include="Content\jquery.js" />
     <Content Include="Global.asax" />
     <Content Include="App_Code\Bootstrap.cshtml" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -858,6 +866,7 @@
     <Compile Include="Controllers\IzinTipiController.cs" />
     <Compile Include="Controllers\MudurlukController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
+    <Compile Include="Controllers\PersonelsController.cs" />
     <Compile Include="Controllers\SeflikController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1091,7 +1100,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BilgiTekIzinTakip.BusinessLayer\BilgiTekIzinTakip.BusinessLayer.csproj">

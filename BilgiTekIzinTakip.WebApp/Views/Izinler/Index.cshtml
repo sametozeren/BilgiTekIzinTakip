@@ -31,7 +31,7 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                        <tr>
+                        <tr style="background-color:@item.IzinTipi.RenkKodu;color:#fff">
                             <td>
                                 @Html.DisplayFor(modelItem => item.Personel.Ad)
                             </td>

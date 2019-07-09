@@ -24,20 +24,18 @@
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-
             <div class="form-group row">
-                @Html.LabelFor(model => model.Personel.Ad, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model=>model.NameSurname,htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Personel.Ad, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Personel.Ad, "", new { @class = "text-danger" })
+                    @Html.TextBoxFor(model=>model.NameSurname, null, new { @placeholder = "Ara...", @id = "PersonelId", @required = true, @class = "form-control" })
                 </div>
             </div>
-
+           
             <div class="form-group row">
                 @Html.LabelFor(model => model.IzinTipi.IzinTuru, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @*@Html.EditorFor(model => model.IzinTipi.IzinTuru, new { htmlAttributes = new { @class = "form-control" } })*@
-                    @Html.DropDownListFor(x => x.IzinTipi.Id,  (IEnumerable<SelectListItem>)ViewBag.IzinTuru, "Seçiniz", htmlAttributes: new { @class = "select2 form-control custom-select select2-hidden-accessible col-md-12" })
+                    @Html.DropDownListFor(x => x.IzinTipi.Id, (IEnumerable<SelectListItem>)ViewBag.IzinTuru, "Seçiniz", htmlAttributes: new { @class = "select2 form-control custom-select select2-hidden-accessible col-md-12" })
                     @*@Html.DropDownListFor(x => x.Baskanlik.Id, (IEnumerable<SelectListItem>)ViewBag.BaskanlikId, null, htmlAttributes: new { @class = "select2 form-control custom-select select2-hidden-accessible col-md-12", @id = "BaskanlikId" })*@
 
                 </div>
@@ -46,15 +44,14 @@
             <div class="form-group row">
                 @Html.LabelFor(model => model.BaslangicTarihi, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.BaslangicTarihi, new { htmlAttributes = new { @class = "form-control datetime",@id="datetimepicker1" } })
-
+                    @Html.EditorFor(model => model.BaslangicTarihi, new { htmlAttributes = new { @class = "form-control", @id = "datetimepicker1" } })
                 </div>
             </div>
 
             <div class="form-group row">
                 @Html.LabelFor(model => model.BitisTarihi, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.BitisTarihi, new { htmlAttributes = new { @class = "form-control" ,@id="datetimepicker2"} })
+                    @Html.EditorFor(model => model.BitisTarihi, new { htmlAttributes = new { @class = "form-control", @id = "datetimepicker2" } })
                 </div>
             </div>
             <div class="form-group row">
@@ -79,5 +76,4 @@
 </div>
     
     }
-
 

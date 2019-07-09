@@ -16,7 +16,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
     {
         private IzinlerManager ızinlerManager = new IzinlerManager();
         private IzinTipiManager izinTipiManager = new IzinTipiManager();
-
+        private PersonelManager personelManager = new PersonelManager();
         // GET: Izinler
         public ActionResult Index()
         {
@@ -42,6 +42,7 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         public ActionResult Create()
         {
             ViewBag.IzinTuru = new SelectList(izinTipiManager.List(), "Id","IzinTuru");
+            ViewBag.Personel = new SelectList(personelManager.List(), "Id", "Ad");
             return View();
         }
 
@@ -52,10 +53,20 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Izinler izinler)
         {
-        
+            string[] id = izinler.NameSurname.Split(' ');
+            ModelState.Remove("ModifiedUsername");
+            ModelState.Remove("CreatedOn");
+            ModelState.Remove("IzinTipi.IzinTuru");
+            ModelState.Remove("IzinTipi.RenkKodu");
+            ModelState.Remove("IzinTipi.ModifiedUsername");
             if (ModelState.IsValid)
             {
-                ızinlerManager.Insert(izinler);
+                Izinler yeni = new Izinler();
+                yeni.BaslangicTarihi = izinler.BaslangicTarihi;
+                yeni.BitisTarihi = izinler.BitisTarihi;
+                yeni.IzinTipiId = izinler.IzinTipi.Id;
+                yeni.PersonelId = Convert.ToInt32(id[0]);
+                ızinlerManager.Insert(yeni);
                 return RedirectToAction("Index");
             }
 
@@ -88,8 +99,11 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                ızinlerManager.Update(izinler);
+                Izinler up = ızinlerManager.Find(x=>x.Id==izinler.Id);
+                up.BaslangicTarihi = izinler.BaslangicTarihi;
+                up.BitisTarihi = izinler.BitisTarihi;
+                up.IzinTipiId = izinler.IzinTipiId;
+                ızinlerManager.Update(up);
                 return RedirectToAction("Index");
             }
             return View(izinler);
@@ -121,6 +135,19 @@ namespace BilgiTekIzinTakip.WebApp.Controllers
                 ızinlerManager.Delete(izinler);
             }
             return RedirectToAction("Index");
+        }
+        public JsonResult GetPerson(string term)
+        {
+            if (!string.IsNullOrEmpty(term))
+            {
+                var users = personelManager.List(x=>x.Ad.Contains(term)).Select(s => s.Id + " - " + s.SicilNo+" - "+s.Ad+ " " +s.Soyad).ToList();
+                return Json(users, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                var users = personelManager.List().Select(s =>s.Id + " - "+ s.SicilNo + " - " + s.Ad + " " + s.Soyad);
+                return Json(users, JsonRequestBehavior.AllowGet);
+            }
         }
     }
 }

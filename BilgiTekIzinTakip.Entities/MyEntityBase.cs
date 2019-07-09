@@ -20,7 +20,7 @@ namespace BilgiTekIzinTakip.Entities
         [DisplayName("Kayıt Güncelleme Tarihi"), ScaffoldColumn(false), Required]
         public DateTime ModifiedOn { get; set; }
 
-        [DisplayName("Kayıtı Güncelleyen Kullanıcı"), ScaffoldColumn(false), Required, StringLength(30)]
+        [DisplayName("Kayıtı Güncelleyen Kullanıcı"), ScaffoldColumn(false), StringLength(30)]
         public string ModifiedUsername { get; set; }
     }
 }

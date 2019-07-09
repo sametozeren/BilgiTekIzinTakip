@@ -14,6 +14,23 @@
             <h4>Bunu silmek istediğinizden emin misiniz?</h4>
             <hr />
             <dl class="dl-horizontal">
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Personel.Ad)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Personel.Ad)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Personel.Soyad)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Personel.Soyad)
+                </dd>
+
                 <dt>
                     @Html.DisplayNameFor(model => model.BaslangicTarihi)
                 </dt>
@@ -28,14 +45,6 @@
 
                 <dd>
                     @Html.DisplayFor(model => model.BitisTarihi)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Personel.Ad)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Personel.Ad)
                 </dd>
                 <dt>
                     @Html.DisplayNameFor(model => model.IzinTipi.IzinTuru)

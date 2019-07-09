@@ -1,7 +1,7 @@
 ﻿@model BilgiTekIzinTakip.Entities.Izinler
 
 @{
-    Vi
+    ViewBag.Title = "İzinler Düzenle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        @Html.EditorFor(model => model.BaslangicTarihi, new { htmlAttributes = new { @class = "form-control",@id="datetimepicker1" } })
+                        @Html.EditorFor(model => model.BaslangicTarihi, new { htmlAttributes = new { @class = "form-control",@id="datetimepicker1"} })
                       
                     </div>
 
@@ -73,12 +73,12 @@
 
                 <div class="form-group row">
                     <div class="col-md-2 m-t-15">
-                        @Html.LabelFor(model => model.IzinTipi.IzinTuru, htmlAttributes: new { @class = "control-label" })
+                        @Html.LabelFor(model => model.IzinTipiId, htmlAttributes: new { @class = "control-label" })
                     </div>
 
                     <div class="col-md-4">
                      
-                        @Html.DropDownListFor(x => x.IzinTipi.IzinTuru, (IEnumerable<SelectListItem>)ViewBag.IzinTuru, null, htmlAttributes: new { @class = "select2 form-control custom-select select2-hidden-accessible col-md-12", @id = "IzinTuru" })
+                        @Html.DropDownListFor(model => model.IzinTipiId, (IEnumerable<SelectListItem>)ViewBag.IzinTuru, null, htmlAttributes: new { @class = "select2 form-control custom-select select2-hidden-accessible col-md-12", @id = "IzinTipiId" })
                     </div>
 
                 </div>

@@ -13,7 +13,10 @@ namespace BilgiTekIzinTakip.Entities
         public DateTime BaslangicTarihi { get; set; }
         [DisplayName("İzin Bitiş Tarihi"),Required(ErrorMessage = "{0} alanı gereklidir.")]
         public DateTime BitisTarihi { get; set; }
+        public int PersonelId { get; set; }
+        public int IzinTipiId { get; set; }
         public virtual Personel Personel { get; set; }
+        public string NameSurname { get; set; }
         public virtual IzinTipi IzinTipi { get; set; }
     }
 }
