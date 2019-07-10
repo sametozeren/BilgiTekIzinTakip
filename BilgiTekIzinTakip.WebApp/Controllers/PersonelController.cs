@@ -9,10 +9,12 @@ using System.Web.Helpers;
 using System.Web.Mvc;
 using BilgiTekIzinTakip.BusinessLayer;
 using BilgiTekIzinTakip.Entities;
+using BilgiTekIzinTakip.WebApp.Filters;
 using BilgiTekIzinTakip.WebApp.Models;
 
 namespace BilgiTekIzinTakip.WebApp.Controllers
 {
+    [Auth]
     public class PersonelController : Controller
     {
         private PersonelManager personelManager = new PersonelManager();

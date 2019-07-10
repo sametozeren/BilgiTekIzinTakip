@@ -866,8 +866,8 @@
     <Compile Include="Controllers\IzinTipiController.cs" />
     <Compile Include="Controllers\MudurlukController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
-    <Compile Include="Controllers\PersonelsController.cs" />
     <Compile Include="Controllers\SeflikController.cs" />
+    <Compile Include="Filters\Auth.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
